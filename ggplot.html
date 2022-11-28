@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>ggplot visualizations &#8212; Data Science Log</title>
+    <title>ggplot &#8212; Data Science Log</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -52,7 +52,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script async="async" src="_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="prev" title="altair Visualizations" href="altair.html" />
+    <link rel="prev" title="altair" href="altair.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -107,7 +107,12 @@ const thebe_selector_output = ".output, .cell_output"
                 </a>
             </li>
         </ul>
-        <ul class="current nav bd-sidenav">
+        <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Systems &amp; Databases
+ </span>
+</p>
+<ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="git.html">
    <code class="docutils literal notranslate">
@@ -115,9 +120,50 @@ const thebe_selector_output = ".output, .cell_output"
      git
     </span>
    </code>
-   commands
   </a>
  </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="sql.html">
+   PostgreSQL
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Analysis
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="python.html">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     python
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="r.html">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     R
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="ml.html">
+   Machine Learning
+  </a>
+ </li>
+</ul>
+<p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Visualization
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="altair.html">
    <code class="docutils literal notranslate">
@@ -125,7 +171,6 @@ const thebe_selector_output = ".output, .cell_output"
      altair
     </span>
    </code>
-   Visualizations
   </a>
  </li>
  <li class="toctree-l1 current active">
@@ -135,7 +180,6 @@ const thebe_selector_output = ".output, .cell_output"
      ggplot
     </span>
    </code>
-   visualizations
   </a>
  </li>
 </ul>
@@ -349,6 +393,38 @@ title="Print to PDF"
    geom_point shapes
   </a>
  </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#straight-lines">
+   Straight lines
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#line-types">
+     Line types
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#draw-vertical-line">
+     Draw vertical line
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#draw-45-degree-diagonal-line">
+     Draw 45-degree diagonal line
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#draw-horizontal-line">
+     Draw horizontal line
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#get-rid-of-grid-lines">
+     Get rid of grid lines
+    </a>
+   </li>
+  </ul>
+ </li>
 </ul>
 
     </nav>
@@ -358,7 +434,7 @@ title="Print to PDF"
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>ggplot visualizations</h1>
+                <h1>ggplot</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -373,6 +449,38 @@ title="Print to PDF"
    geom_point shapes
   </a>
  </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#straight-lines">
+   Straight lines
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#line-types">
+     Line types
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#draw-vertical-line">
+     Draw vertical line
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#draw-45-degree-diagonal-line">
+     Draw 45-degree diagonal line
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#draw-horizontal-line">
+     Draw horizontal line
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#get-rid-of-grid-lines">
+     Get rid of grid lines
+    </a>
+   </li>
+  </ul>
+ </li>
 </ul>
 
                         </nav>
@@ -383,14 +491,160 @@ title="Print to PDF"
                 
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="ggplot-visualizations">
-<h1><code class="docutils literal notranslate"><span class="pre">ggplot</span></code> visualizations<a class="headerlink" href="#ggplot-visualizations" title="Permalink to this headline">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="ggplot">
+<h1><code class="docutils literal notranslate"><span class="pre">ggplot</span></code><a class="headerlink" href="#ggplot" title="Permalink to this headline">#</a></h1>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">library</span><span class="p">(</span><span class="n">tidyverse</span><span class="p">)</span>
+<span class="nf">library</span><span class="p">(</span><span class="n">broom</span><span class="p">)</span>
+<span class="nf">library</span><span class="p">(</span><span class="n">tree</span><span class="p">)</span>
+<span class="nf">library</span><span class="p">(</span><span class="n">digest</span><span class="p">)</span>
+<span class="nf">library</span><span class="p">(</span><span class="n">testthat</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>── <span class=" -Color -Color-Bold">Attaching packages</span> ───────────────────────────── tidyverse 1.3.2 ──
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span><span class=" -Color -Color-Green">✔</span> <span class=" -Color -Color-Blue">ggplot2</span> 3.3.6      <span class=" -Color -Color-Green">✔</span> <span class=" -Color -Color-Blue">purrr  </span> 0.3.4 
+<span class=" -Color -Color-Green">✔</span> <span class=" -Color -Color-Blue">tibble </span> 3.1.8      <span class=" -Color -Color-Green">✔</span> <span class=" -Color -Color-Blue">dplyr  </span> 1.0.10
+<span class=" -Color -Color-Green">✔</span> <span class=" -Color -Color-Blue">tidyr  </span> 1.2.0      <span class=" -Color -Color-Green">✔</span> <span class=" -Color -Color-Blue">stringr</span> 1.4.1 
+<span class=" -Color -Color-Green">✔</span> <span class=" -Color -Color-Blue">readr  </span> 2.1.3      <span class=" -Color -Color-Green">✔</span> <span class=" -Color -Color-Blue">forcats</span> 0.5.2 
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>── <span class=" -Color -Color-Bold">Conflicts</span> ──────────────────────────────── tidyverse_conflicts() ──
+<span class=" -Color -Color-Red">✖</span> <span class=" -Color -Color-Blue">dplyr</span>::<span class=" -Color -Color-Green">filter()</span> masks <span class=" -Color -Color-Blue">stats</span>::filter()
+<span class=" -Color -Color-Red">✖</span> <span class=" -Color -Color-Blue">dplyr</span>::<span class=" -Color -Color-Green">lag()</span>    masks <span class=" -Color -Color-Blue">stats</span>::lag()
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Attaching package: ‘testthat’
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The following object is masked from ‘package:dplyr’:
+
+    matches
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The following object is masked from ‘package:purrr’:
+
+    is_null
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The following objects are masked from ‘package:readr’:
+
+    edition_get, local_edition
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The following object is masked from ‘package:tidyr’:
+
+    matches
+</pre></div>
+</div>
+</div>
+</div>
 <section id="geom-point-shapes">
 <h2>geom_point shapes<a class="headerlink" href="#geom-point-shapes" title="Permalink to this headline">#</a></h2>
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">geom_point</span><span class="p">(</span><span class="n">shape</span> <span class="o">=</span> <span class="m">0</span><span class="p">)</span>
 </pre></div>
 </div>
-<p><img alt="geom_point shapes" src="_images/points-symbols.png" /></p>
+<div>
+    <img src="imgs/points-symbols.png" width="400"/>
+</div></section>
+<hr class="docutils" />
+<section id="straight-lines">
+<h2>Straight lines<a class="headerlink" href="#straight-lines" title="Permalink to this headline">#</a></h2>
+<section id="line-types">
+<h3>Line types<a class="headerlink" href="#line-types" title="Permalink to this headline">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="nf">ggplot</span><span class="p">()</span> 
+ <span class="o">+</span> <span class="nf">geom_hline</span><span class="p">(</span><span class="n">yintercept</span> <span class="o">=</span> <span class="m">0</span><span class="p">,</span> <span class="n">size</span> <span class="o">=</span> <span class="m">1</span><span class="p">,</span> <span class="n">linetype</span> <span class="o">=</span> <span class="s">&#39;solid&#39;</span><span class="p">)</span> 
+ <span class="o">+</span> <span class="nf">geom_hline</span><span class="p">(</span><span class="n">yintercept</span> <span class="o">=</span> <span class="m">0.05</span><span class="p">,</span> <span class="n">size</span> <span class="o">=</span> <span class="m">1</span><span class="p">,</span> <span class="n">linetype</span> <span class="o">=</span> <span class="s">&#39;dashed&#39;</span><span class="p">)</span> 
+ <span class="o">+</span> <span class="nf">geom_hline</span><span class="p">(</span><span class="n">yintercept</span> <span class="o">=</span> <span class="m">0.1</span><span class="p">,</span> <span class="n">size</span> <span class="o">=</span> <span class="m">1</span><span class="p">,</span> <span class="n">linetype</span> <span class="o">=</span> <span class="s">&#39;dotted&#39;</span><span class="p">)</span> 
+ <span class="o">+</span> <span class="nf">geom_hline</span><span class="p">(</span><span class="n">yintercept</span> <span class="o">=</span> <span class="m">0.15</span><span class="p">,</span> <span class="n">size</span> <span class="o">=</span> <span class="m">1</span><span class="p">,</span> <span class="n">linetype</span> <span class="o">=</span> <span class="s">&#39;dotdash&#39;</span><span class="p">)</span> 
+ <span class="o">+</span> <span class="nf">geom_hline</span><span class="p">(</span><span class="n">yintercept</span> <span class="o">=</span> <span class="m">0.2</span><span class="p">,</span> <span class="n">size</span> <span class="o">=</span> <span class="m">1</span><span class="p">,</span> <span class="n">linetype</span> <span class="o">=</span> <span class="s">&#39;longdash&#39;</span><span class="p">)</span> 
+ <span class="o">+</span> <span class="nf">geom_hline</span><span class="p">(</span><span class="n">yintercept</span> <span class="o">=</span> <span class="m">0.25</span><span class="p">,</span> <span class="n">size</span> <span class="o">=</span> <span class="m">1</span><span class="p">,</span> <span class="n">linetype</span> <span class="o">=</span> <span class="s">&#39;twodash&#39;</span><span class="p">)</span> 
+ <span class="o">+</span> <span class="nf">theme_bw</span><span class="p">()</span>
+ <span class="o">+</span> <span class="nf">theme</span><span class="p">(</span><span class="n">panel.border</span> <span class="o">=</span> <span class="nf">element_blank</span><span class="p">(),</span> 
+         <span class="n">panel.grid.major</span> <span class="o">=</span> <span class="nf">element_blank</span><span class="p">(),</span> 
+         <span class="n">panel.grid.minor</span> <span class="o">=</span> <span class="nf">element_blank</span><span class="p">()))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/ggplot_8_0.png" src="_images/ggplot_8_0.png" />
+</div>
+</div>
+</section>
+<section id="draw-vertical-line">
+<h3>Draw vertical line<a class="headerlink" href="#draw-vertical-line" title="Permalink to this headline">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="nf">ggplot</span><span class="p">()</span> <span class="o">+</span> <span class="nf">geom_vline</span><span class="p">(</span><span class="n">xintercept</span> <span class="o">=</span> <span class="m">0</span><span class="p">,</span> <span class="n">size</span> <span class="o">=</span> <span class="m">0.5</span><span class="p">)</span> 
+ <span class="o">+</span> <span class="nf">theme_bw</span><span class="p">()</span>
+ <span class="o">+</span> <span class="nf">theme</span><span class="p">(</span><span class="n">panel.border</span> <span class="o">=</span> <span class="nf">element_blank</span><span class="p">(),</span> 
+         <span class="n">panel.grid.major</span> <span class="o">=</span> <span class="nf">element_blank</span><span class="p">(),</span> 
+         <span class="n">panel.grid.minor</span> <span class="o">=</span> <span class="nf">element_blank</span><span class="p">()))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/ggplot_10_0.png" src="_images/ggplot_10_0.png" />
+</div>
+</div>
+</section>
+<section id="draw-45-degree-diagonal-line">
+<h3>Draw 45-degree diagonal line<a class="headerlink" href="#draw-45-degree-diagonal-line" title="Permalink to this headline">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="nf">ggplot</span><span class="p">()</span> <span class="o">+</span> <span class="nf">geom_abline</span><span class="p">(</span><span class="n">intercept</span> <span class="o">=</span> <span class="m">0</span><span class="p">,</span> <span class="n">slope</span> <span class="o">=</span> <span class="m">1</span><span class="p">,</span> <span class="n">size</span> <span class="o">=</span> <span class="m">0.5</span><span class="p">)</span>  
+ <span class="o">+</span> <span class="nf">theme_bw</span><span class="p">()</span>
+ <span class="o">+</span> <span class="nf">theme</span><span class="p">(</span><span class="n">panel.border</span> <span class="o">=</span> <span class="nf">element_blank</span><span class="p">(),</span> 
+         <span class="n">panel.grid.major</span> <span class="o">=</span> <span class="nf">element_blank</span><span class="p">(),</span> 
+         <span class="n">panel.grid.minor</span> <span class="o">=</span> <span class="nf">element_blank</span><span class="p">()))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/ggplot_12_0.png" src="_images/ggplot_12_0.png" />
+</div>
+</div>
+</section>
+<section id="draw-horizontal-line">
+<h3>Draw horizontal line<a class="headerlink" href="#draw-horizontal-line" title="Permalink to this headline">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="nf">ggplot</span><span class="p">()</span> <span class="o">+</span> <span class="nf">geom_hline</span><span class="p">(</span><span class="n">yintercept</span> <span class="o">=</span> <span class="m">0</span><span class="p">,</span> <span class="n">size</span> <span class="o">=</span> <span class="m">0.5</span><span class="p">)</span> 
+ <span class="o">+</span> <span class="nf">theme_bw</span><span class="p">()</span>
+ <span class="o">+</span> <span class="nf">theme</span><span class="p">(</span><span class="n">panel.border</span> <span class="o">=</span> <span class="nf">element_blank</span><span class="p">(),</span> 
+         <span class="n">panel.grid.major</span> <span class="o">=</span> <span class="nf">element_blank</span><span class="p">(),</span> 
+         <span class="n">panel.grid.minor</span> <span class="o">=</span> <span class="nf">element_blank</span><span class="p">()))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/ggplot_14_0.png" src="_images/ggplot_14_0.png" />
+</div>
+</div>
+</section>
+<section id="get-rid-of-grid-lines">
+<h3>Get rid of grid lines<a class="headerlink" href="#get-rid-of-grid-lines" title="Permalink to this headline">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="nf">ggplot</span><span class="p">()</span> 
+ <span class="o">+</span> <span class="nf">theme_bw</span><span class="p">()</span>
+ <span class="o">+</span> <span class="nf">theme</span><span class="p">(</span><span class="n">panel.grid.major</span> <span class="o">=</span> <span class="nf">element_blank</span><span class="p">(),</span> 
+         <span class="n">panel.grid.minor</span> <span class="o">=</span> <span class="nf">element_blank</span><span class="p">())</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/ggplot_16_0.png" src="_images/ggplot_16_0.png" />
+</div>
+</div>
+</section>
 </section>
 </section>
 
@@ -425,7 +679,7 @@ title="Print to PDF"
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title"><code class="docutils literal notranslate"><span class="pre">altair</span></code> Visualizations</p>
+            <p class="prev-next-title"><code class="docutils literal notranslate"><span class="pre">altair</span></code></p>
         </div>
     </a>
 </div>
