@@ -659,13 +659,12 @@ title="Print to PDF"
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 
-<span class="n">gm</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span>
-    <span class="s2">&quot;https://raw.githubusercontent.com/UofTCoders/workshops-dc-py/master/data/processed/world-data-gapminder.csv&quot;</span><span class="p">,</span>
-    <span class="n">parse_dates</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;year&#39;</span><span class="p">])</span>
+<span class="n">gm</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;gapminder.csv&#39;</span><span class="p">,</span> <span class="n">parse_dates</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;year&#39;</span><span class="p">])</span>
 </pre></div>
 </div>
 </div>
 </div>
+<p>Data obtained from : <a class="reference external" href="https://raw.githubusercontent.com/UofTCoders/workshops-dc-py/master/data/processed/world-data-gapminder.csv">https://raw.githubusercontent.com/UofTCoders/workshops-dc-py/master/data/processed/world-data-gapminder.csv</a>”,</p>
 <section id="bar-chart">
 <h2>Bar chart<a class="headerlink" href="#bar-chart" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
@@ -699,13 +698,13 @@ title="Print to PDF"
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html">
-<div id="altair-viz-77842d660a0242a1b4eeff826ef76777"></div>
+<div id="altair-viz-dd3d08e34c9a4b26a7f2a285c8ee9857"></div>
 <script type="text/javascript">
   var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-77842d660a0242a1b4eeff826ef76777") {
-      outputDiv = document.getElementById("altair-viz-77842d660a0242a1b4eeff826ef76777");
+    if (outputDiv.id !== "altair-viz-dd3d08e34c9a4b26a7f2a285c8ee9857") {
+      outputDiv = document.getElementById("altair-viz-dd3d08e34c9a4b26a7f2a285c8ee9857");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
@@ -751,7 +750,7 @@ title="Print to PDF"
         .catch(showError)
         .then(() => displayChart(vegaEmbed));
     }
-  })({"config": {"view": {"continuousWidth": 400, "continuousHeight": 300, "strokeWidth": 0}, "axis": {"grid": false}}, "layer": [{"mark": "bar", "encoding": {"color": {"field": "region", "type": "nominal"}, "x": {"aggregate": "mean", "field": "life_expectancy", "type": "quantitative"}, "y": {"field": "region", "sort": "-x", "type": "nominal"}}}, {"mark": {"type": "text", "align": "left", "baseline": "middle", "dx": 10}, "encoding": {"color": {"field": "region", "type": "nominal"}, "text": {"aggregate": "mean", "field": "life_expectancy", "format": "0.2f", "type": "quantitative"}, "x": {"aggregate": "mean", "field": "life_expectancy", "type": "quantitative"}, "y": {"field": "region", "sort": "-x", "type": "nominal"}}}], "data": {"url": "http://localhost:63028/18c879ec7b603e873965a28258ef4f7a.json"}, "$schema": "https://vega.github.io/schema/vega-lite/v4.17.0.json"}, {"mode": "vega-lite"});
+  })({"config": {"view": {"continuousWidth": 400, "continuousHeight": 300, "strokeWidth": 0}, "axis": {"grid": false}}, "layer": [{"mark": "bar", "encoding": {"color": {"field": "region", "type": "nominal"}, "x": {"aggregate": "mean", "field": "life_expectancy", "type": "quantitative"}, "y": {"field": "region", "sort": "-x", "type": "nominal"}}}, {"mark": {"type": "text", "align": "left", "baseline": "middle", "dx": 10}, "encoding": {"color": {"field": "region", "type": "nominal"}, "text": {"aggregate": "mean", "field": "life_expectancy", "format": "0.2f", "type": "quantitative"}, "x": {"aggregate": "mean", "field": "life_expectancy", "type": "quantitative"}, "y": {"field": "region", "sort": "-x", "type": "nominal"}}}], "data": {"url": "http://localhost:63657/18c879ec7b603e873965a28258ef4f7a.json"}, "$schema": "https://vega.github.io/schema/vega-lite/v4.17.0.json"}, {"mode": "vega-lite"});
 </script></div></div>
 </div>
 <section id="bar-chart-showing-polarity-in-values">
@@ -773,13 +772,13 @@ title="Print to PDF"
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html">
-<div id="altair-viz-dd9cb3f14e5b4982bd74a1c7d3684328"></div>
+<div id="altair-viz-0fca5000da64486fadca619c087d343a"></div>
 <script type="text/javascript">
   var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-dd9cb3f14e5b4982bd74a1c7d3684328") {
-      outputDiv = document.getElementById("altair-viz-dd9cb3f14e5b4982bd74a1c7d3684328");
+    if (outputDiv.id !== "altair-viz-0fca5000da64486fadca619c087d343a") {
+      outputDiv = document.getElementById("altair-viz-0fca5000da64486fadca619c087d343a");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
@@ -825,7 +824,7 @@ title="Print to PDF"
         .catch(showError)
         .then(() => displayChart(vegaEmbed));
     }
-  })({"config": {"view": {"continuousWidth": 400, "continuousHeight": 300}}, "data": {"url": "http://localhost:63028/991a3da9f30f828a4a861c02d0149749.json"}, "mark": "bar", "encoding": {"color": {"field": "sub_region", "type": "nominal"}, "x": {"field": "income_from_avg", "type": "quantitative"}, "y": {"field": "country", "sort": "-x", "title": "Language", "type": "nominal"}}, "$schema": "https://vega.github.io/schema/vega-lite/v4.17.0.json"}, {"mode": "vega-lite"});
+  })({"config": {"view": {"continuousWidth": 400, "continuousHeight": 300}}, "data": {"url": "http://localhost:63657/991a3da9f30f828a4a861c02d0149749.json"}, "mark": "bar", "encoding": {"color": {"field": "sub_region", "type": "nominal"}, "x": {"field": "income_from_avg", "type": "quantitative"}, "y": {"field": "country", "sort": "-x", "title": "Language", "type": "nominal"}}, "$schema": "https://vega.github.io/schema/vega-lite/v4.17.0.json"}, {"mode": "vega-lite"});
 </script></div></div>
 </div>
 </section>
@@ -855,13 +854,13 @@ title="Print to PDF"
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html">
-<div id="altair-viz-3e26f6aa79884ccbb5d2cb59bc8fc75b"></div>
+<div id="altair-viz-1e9c33c44c604f76a41d571201a540e9"></div>
 <script type="text/javascript">
   var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-3e26f6aa79884ccbb5d2cb59bc8fc75b") {
-      outputDiv = document.getElementById("altair-viz-3e26f6aa79884ccbb5d2cb59bc8fc75b");
+    if (outputDiv.id !== "altair-viz-1e9c33c44c604f76a41d571201a540e9") {
+      outputDiv = document.getElementById("altair-viz-1e9c33c44c604f76a41d571201a540e9");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
@@ -907,7 +906,7 @@ title="Print to PDF"
         .catch(showError)
         .then(() => displayChart(vegaEmbed));
     }
-  })({"config": {"view": {"continuousWidth": 400, "continuousHeight": 300}, "axis": {"grid": false}}, "data": {"url": "http://localhost:63028/7c70fc15623d8fc932be17103be8051d.json"}, "mark": "bar", "encoding": {"x": {"bin": {"maxbins": 25}, "field": "children_per_woman", "title": "Income", "type": "quantitative"}, "y": {"aggregate": "count", "title": "Count", "type": "ordinal"}}, "height": 150, "width": 500, "$schema": "https://vega.github.io/schema/vega-lite/v4.17.0.json"}, {"mode": "vega-lite"});
+  })({"config": {"view": {"continuousWidth": 400, "continuousHeight": 300}, "axis": {"grid": false}}, "data": {"url": "http://localhost:63657/7c70fc15623d8fc932be17103be8051d.json"}, "mark": "bar", "encoding": {"x": {"bin": {"maxbins": 25}, "field": "children_per_woman", "title": "Income", "type": "quantitative"}, "y": {"aggregate": "count", "title": "Count", "type": "ordinal"}}, "height": 150, "width": 500, "$schema": "https://vega.github.io/schema/vega-lite/v4.17.0.json"}, {"mode": "vega-lite"});
 </script></div></div>
 </div>
 </section>
@@ -931,13 +930,13 @@ title="Print to PDF"
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html">
-<div id="altair-viz-8653b0260665421a9edc2d143015a76f"></div>
+<div id="altair-viz-bdbc32d0238343a1a25f7d32da198d09"></div>
 <script type="text/javascript">
   var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-8653b0260665421a9edc2d143015a76f") {
-      outputDiv = document.getElementById("altair-viz-8653b0260665421a9edc2d143015a76f");
+    if (outputDiv.id !== "altair-viz-bdbc32d0238343a1a25f7d32da198d09") {
+      outputDiv = document.getElementById("altair-viz-bdbc32d0238343a1a25f7d32da198d09");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
@@ -983,7 +982,7 @@ title="Print to PDF"
         .catch(showError)
         .then(() => displayChart(vegaEmbed));
     }
-  })({"config": {"view": {"continuousWidth": 400, "continuousHeight": 300}, "axis": {"grid": false}}, "data": {"url": "http://localhost:63028/7c70fc15623d8fc932be17103be8051d.json"}, "mark": "bar", "encoding": {"x": {"bin": {"extent": [4, 8], "step": 0.25}, "field": "children_per_woman", "title": "Income", "type": "quantitative"}, "y": {"aggregate": "count", "title": "Count", "type": "ordinal"}}, "height": 150, "width": 500, "$schema": "https://vega.github.io/schema/vega-lite/v4.17.0.json"}, {"mode": "vega-lite"});
+  })({"config": {"view": {"continuousWidth": 400, "continuousHeight": 300}, "axis": {"grid": false}}, "data": {"url": "http://localhost:63657/7c70fc15623d8fc932be17103be8051d.json"}, "mark": "bar", "encoding": {"x": {"bin": {"extent": [4, 8], "step": 0.25}, "field": "children_per_woman", "title": "Income", "type": "quantitative"}, "y": {"aggregate": "count", "title": "Count", "type": "ordinal"}}, "height": 150, "width": 500, "$schema": "https://vega.github.io/schema/vega-lite/v4.17.0.json"}, {"mode": "vega-lite"});
 </script></div></div>
 </div>
 </section>
@@ -1022,13 +1021,13 @@ title="Print to PDF"
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html">
-<div id="altair-viz-2c1cf10fc054412a803c62b87ff13890"></div>
+<div id="altair-viz-81f5a73606ff473790d69ff78f14665b"></div>
 <script type="text/javascript">
   var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-2c1cf10fc054412a803c62b87ff13890") {
-      outputDiv = document.getElementById("altair-viz-2c1cf10fc054412a803c62b87ff13890");
+    if (outputDiv.id !== "altair-viz-81f5a73606ff473790d69ff78f14665b") {
+      outputDiv = document.getElementById("altair-viz-81f5a73606ff473790d69ff78f14665b");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
@@ -1074,7 +1073,7 @@ title="Print to PDF"
         .catch(showError)
         .then(() => displayChart(vegaEmbed));
     }
-  })({"config": {"view": {"continuousWidth": 400, "continuousHeight": 300}, "axis": {"grid": false, "titleFontSize": 14}, "title": {"fontSize": 16}}, "data": {"url": "http://localhost:63028/c2265aa8b6a0184953dee7709bec3c54.json"}, "mark": {"type": "circle", "opacity": 0.5}, "encoding": {"color": {"field": "region", "legend": {"title": "Region"}, "type": "nominal"}, "size": {"field": "population", "legend": {"title": "Population"}, "scale": {"range": [50, 3000]}, "type": "quantitative"}, "x": {"field": "children_per_woman", "scale": {"zero": false}, "title": "Children per Woman", "type": "quantitative"}, "y": {"field": "life_expectancy", "scale": {"zero": false}, "title": "Life Expectancy", "type": "quantitative"}}, "height": 500, "title": "Fertility vs. Life Expectancy in 1962", "width": 500, "$schema": "https://vega.github.io/schema/vega-lite/v4.17.0.json"}, {"mode": "vega-lite"});
+  })({"config": {"view": {"continuousWidth": 400, "continuousHeight": 300}, "axis": {"grid": false, "titleFontSize": 14}, "title": {"fontSize": 16}}, "data": {"url": "http://localhost:63657/c2265aa8b6a0184953dee7709bec3c54.json"}, "mark": {"type": "circle", "opacity": 0.5}, "encoding": {"color": {"field": "region", "legend": {"title": "Region"}, "type": "nominal"}, "size": {"field": "population", "legend": {"title": "Population"}, "scale": {"range": [50, 3000]}, "type": "quantitative"}, "x": {"field": "children_per_woman", "scale": {"zero": false}, "title": "Children per Woman", "type": "quantitative"}, "y": {"field": "life_expectancy", "scale": {"zero": false}, "title": "Life Expectancy", "type": "quantitative"}}, "height": 500, "title": "Fertility vs. Life Expectancy in 1962", "width": 500, "$schema": "https://vega.github.io/schema/vega-lite/v4.17.0.json"}, {"mode": "vega-lite"});
 </script></div></div>
 </div>
 </section>
@@ -1115,13 +1114,13 @@ title="Print to PDF"
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html">
-<div id="altair-viz-89b11fa95a8c4609965baa3aa2da247a"></div>
+<div id="altair-viz-9e020f79527341d3bef4fd8ddac89795"></div>
 <script type="text/javascript">
   var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-89b11fa95a8c4609965baa3aa2da247a") {
-      outputDiv = document.getElementById("altair-viz-89b11fa95a8c4609965baa3aa2da247a");
+    if (outputDiv.id !== "altair-viz-9e020f79527341d3bef4fd8ddac89795") {
+      outputDiv = document.getElementById("altair-viz-9e020f79527341d3bef4fd8ddac89795");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
@@ -1167,7 +1166,7 @@ title="Print to PDF"
         .catch(showError)
         .then(() => displayChart(vegaEmbed));
     }
-  })({"config": {"view": {"continuousWidth": 400, "continuousHeight": 300}}, "data": {"url": "http://localhost:63028/47897c30714ff3fd9deb3b13f3265e65.json"}, "mark": "line", "encoding": {"color": {"field": "region", "type": "nominal"}, "x": {"field": "year", "type": "temporal"}, "y": {"aggregate": "mean", "field": "income", "type": "quantitative"}}, "$schema": "https://vega.github.io/schema/vega-lite/v4.17.0.json"}, {"mode": "vega-lite"});
+  })({"config": {"view": {"continuousWidth": 400, "continuousHeight": 300}}, "data": {"url": "http://localhost:63657/47897c30714ff3fd9deb3b13f3265e65.json"}, "mark": "line", "encoding": {"color": {"field": "region", "type": "nominal"}, "x": {"field": "year", "type": "temporal"}, "y": {"aggregate": "mean", "field": "income", "type": "quantitative"}}, "$schema": "https://vega.github.io/schema/vega-lite/v4.17.0.json"}, {"mode": "vega-lite"});
 </script></div></div>
 </div>
 <div class="cell docutils container">
@@ -1181,13 +1180,13 @@ title="Print to PDF"
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html">
-<div id="altair-viz-3dc6a2adbc674ca0ba4fdade0c78e1eb"></div>
+<div id="altair-viz-a4a5128dfdc34a3b96b1b8de5ad004d2"></div>
 <script type="text/javascript">
   var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-3dc6a2adbc674ca0ba4fdade0c78e1eb") {
-      outputDiv = document.getElementById("altair-viz-3dc6a2adbc674ca0ba4fdade0c78e1eb");
+    if (outputDiv.id !== "altair-viz-a4a5128dfdc34a3b96b1b8de5ad004d2") {
+      outputDiv = document.getElementById("altair-viz-a4a5128dfdc34a3b96b1b8de5ad004d2");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
@@ -1233,7 +1232,7 @@ title="Print to PDF"
         .catch(showError)
         .then(() => displayChart(vegaEmbed));
     }
-  })({"config": {"view": {"continuousWidth": 400, "continuousHeight": 300}}, "layer": [{"mark": "line", "encoding": {"color": {"field": "region", "type": "nominal"}, "x": {"field": "year", "type": "temporal"}, "y": {"aggregate": "mean", "field": "income", "type": "quantitative"}}}, {"mark": {"type": "rule", "size": 1.5, "strokeDash": [5, 5]}, "encoding": {"color": {"field": "region", "type": "nominal"}, "x": {"datum": {"year": 2005}}, "y": {"aggregate": "mean", "field": "income", "type": "quantitative"}}}], "data": {"url": "http://localhost:63028/47897c30714ff3fd9deb3b13f3265e65.json"}, "$schema": "https://vega.github.io/schema/vega-lite/v4.17.0.json"}, {"mode": "vega-lite"});
+  })({"config": {"view": {"continuousWidth": 400, "continuousHeight": 300}}, "layer": [{"mark": "line", "encoding": {"color": {"field": "region", "type": "nominal"}, "x": {"field": "year", "type": "temporal"}, "y": {"aggregate": "mean", "field": "income", "type": "quantitative"}}}, {"mark": {"type": "rule", "size": 1.5, "strokeDash": [5, 5]}, "encoding": {"color": {"field": "region", "type": "nominal"}, "x": {"datum": {"year": 2005}}, "y": {"aggregate": "mean", "field": "income", "type": "quantitative"}}}], "data": {"url": "http://localhost:63657/47897c30714ff3fd9deb3b13f3265e65.json"}, "$schema": "https://vega.github.io/schema/vega-lite/v4.17.0.json"}, {"mode": "vega-lite"});
 </script></div></div>
 </div>
 <div class="cell docutils container">
@@ -1248,13 +1247,13 @@ title="Print to PDF"
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html">
-<div id="altair-viz-7e2cc25e86454b41a52df92744aadfaa"></div>
+<div id="altair-viz-71090688c1d34ac1b6250edf032c7b0e"></div>
 <script type="text/javascript">
   var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-7e2cc25e86454b41a52df92744aadfaa") {
-      outputDiv = document.getElementById("altair-viz-7e2cc25e86454b41a52df92744aadfaa");
+    if (outputDiv.id !== "altair-viz-71090688c1d34ac1b6250edf032c7b0e") {
+      outputDiv = document.getElementById("altair-viz-71090688c1d34ac1b6250edf032c7b0e");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
@@ -1300,7 +1299,7 @@ title="Print to PDF"
         .catch(showError)
         .then(() => displayChart(vegaEmbed));
     }
-  })({"config": {"view": {"continuousWidth": 400, "continuousHeight": 300}}, "layer": [{"mark": "line", "encoding": {"color": {"field": "region", "type": "nominal"}, "x": {"field": "year", "type": "temporal"}, "y": {"aggregate": "mean", "field": "income", "type": "quantitative"}}}, {"mark": {"type": "rule", "strokeDash": [5, 5]}, "encoding": {"color": {"field": "region", "type": "nominal"}, "x": {"datum": 2010}, "y": {"aggregate": "mean", "field": "income", "type": "quantitative"}}}, {"mark": {"type": "text", "color": "black", "dx": 125, "dy": -115, "size": 15}, "encoding": {"color": {"field": "region", "type": "nominal"}, "text": {"value": "2005, Gun law enacted"}, "x": {"field": "year", "type": "temporal"}, "y": {"aggregate": "mean", "field": "income", "type": "quantitative"}}}], "data": {"url": "http://localhost:63028/47897c30714ff3fd9deb3b13f3265e65.json"}, "$schema": "https://vega.github.io/schema/vega-lite/v4.17.0.json"}, {"mode": "vega-lite"});
+  })({"config": {"view": {"continuousWidth": 400, "continuousHeight": 300}}, "layer": [{"mark": "line", "encoding": {"color": {"field": "region", "type": "nominal"}, "x": {"field": "year", "type": "temporal"}, "y": {"aggregate": "mean", "field": "income", "type": "quantitative"}}}, {"mark": {"type": "rule", "strokeDash": [5, 5]}, "encoding": {"color": {"field": "region", "type": "nominal"}, "x": {"datum": 2010}, "y": {"aggregate": "mean", "field": "income", "type": "quantitative"}}}, {"mark": {"type": "text", "color": "black", "dx": 125, "dy": -115, "size": 15}, "encoding": {"color": {"field": "region", "type": "nominal"}, "text": {"value": "2005, Gun law enacted"}, "x": {"field": "year", "type": "temporal"}, "y": {"aggregate": "mean", "field": "income", "type": "quantitative"}}}], "data": {"url": "http://localhost:63657/47897c30714ff3fd9deb3b13f3265e65.json"}, "$schema": "https://vega.github.io/schema/vega-lite/v4.17.0.json"}, {"mode": "vega-lite"});
 </script></div></div>
 </div>
 <div class="cell docutils container">
@@ -1316,13 +1315,13 @@ title="Print to PDF"
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html">
-<div id="altair-viz-6831e0cadf434bd5b895586b4492c391"></div>
+<div id="altair-viz-af0a70cf81be49b18d51618e58fdf160"></div>
 <script type="text/javascript">
   var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-6831e0cadf434bd5b895586b4492c391") {
-      outputDiv = document.getElementById("altair-viz-6831e0cadf434bd5b895586b4492c391");
+    if (outputDiv.id !== "altair-viz-af0a70cf81be49b18d51618e58fdf160") {
+      outputDiv = document.getElementById("altair-viz-af0a70cf81be49b18d51618e58fdf160");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
@@ -1368,7 +1367,7 @@ title="Print to PDF"
         .catch(showError)
         .then(() => displayChart(vegaEmbed));
     }
-  })({"config": {"view": {"continuousWidth": 400, "continuousHeight": 300}, "axis": {"grid": false}}, "layer": [{"mark": "line", "encoding": {"color": {"field": "region", "type": "nominal"}, "x": {"field": "year", "type": "temporal"}, "y": {"aggregate": "mean", "field": "income", "type": "quantitative"}}}, {"mark": {"type": "square", "size": 20}, "encoding": {"color": {"field": "region", "type": "nominal"}, "x": {"field": "year", "type": "temporal"}, "y": {"aggregate": "mean", "field": "income", "type": "quantitative"}}}, {"mark": {"type": "errorband", "opacity": 0.2}, "encoding": {"color": {"field": "region", "type": "nominal"}, "x": {"field": "year", "type": "temporal"}, "y": {"aggregate": "mean", "field": "income", "type": "quantitative"}}}], "data": {"url": "http://localhost:63028/47897c30714ff3fd9deb3b13f3265e65.json"}, "$schema": "https://vega.github.io/schema/vega-lite/v4.17.0.json"}, {"mode": "vega-lite"});
+  })({"config": {"view": {"continuousWidth": 400, "continuousHeight": 300}, "axis": {"grid": false}}, "layer": [{"mark": "line", "encoding": {"color": {"field": "region", "type": "nominal"}, "x": {"field": "year", "type": "temporal"}, "y": {"aggregate": "mean", "field": "income", "type": "quantitative"}}}, {"mark": {"type": "square", "size": 20}, "encoding": {"color": {"field": "region", "type": "nominal"}, "x": {"field": "year", "type": "temporal"}, "y": {"aggregate": "mean", "field": "income", "type": "quantitative"}}}, {"mark": {"type": "errorband", "opacity": 0.2}, "encoding": {"color": {"field": "region", "type": "nominal"}, "x": {"field": "year", "type": "temporal"}, "y": {"aggregate": "mean", "field": "income", "type": "quantitative"}}}], "data": {"url": "http://localhost:63657/47897c30714ff3fd9deb3b13f3265e65.json"}, "$schema": "https://vega.github.io/schema/vega-lite/v4.17.0.json"}, {"mode": "vega-lite"});
 </script></div></div>
 </div>
 <section id="area-chart">
@@ -1391,13 +1390,13 @@ title="Print to PDF"
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html">
-<div id="altair-viz-066c56ab1bbc40a28494c7241e24f0e6"></div>
+<div id="altair-viz-3e545c5f5bb34420912e33bd76329552"></div>
 <script type="text/javascript">
   var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-066c56ab1bbc40a28494c7241e24f0e6") {
-      outputDiv = document.getElementById("altair-viz-066c56ab1bbc40a28494c7241e24f0e6");
+    if (outputDiv.id !== "altair-viz-3e545c5f5bb34420912e33bd76329552") {
+      outputDiv = document.getElementById("altair-viz-3e545c5f5bb34420912e33bd76329552");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
@@ -1443,7 +1442,7 @@ title="Print to PDF"
         .catch(showError)
         .then(() => displayChart(vegaEmbed));
     }
-  })({"config": {"view": {"continuousWidth": 400, "continuousHeight": 300}, "axis": {"grid": false}}, "data": {"url": "http://localhost:63028/7c70fc15623d8fc932be17103be8051d.json"}, "mark": "area", "encoding": {"color": {"field": "region", "type": "nominal"}, "x": {"field": "year", "type": "temporal"}, "y": {"aggregate": "sum", "field": "income", "type": "quantitative"}}, "$schema": "https://vega.github.io/schema/vega-lite/v4.17.0.json"}, {"mode": "vega-lite"});
+  })({"config": {"view": {"continuousWidth": 400, "continuousHeight": 300}, "axis": {"grid": false}}, "data": {"url": "http://localhost:63657/7c70fc15623d8fc932be17103be8051d.json"}, "mark": "area", "encoding": {"color": {"field": "region", "type": "nominal"}, "x": {"field": "year", "type": "temporal"}, "y": {"aggregate": "sum", "field": "income", "type": "quantitative"}}, "$schema": "https://vega.github.io/schema/vega-lite/v4.17.0.json"}, {"mode": "vega-lite"});
 </script></div></div>
 </div>
 </section>
@@ -1464,13 +1463,13 @@ title="Print to PDF"
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html">
-<div id="altair-viz-555ea10b6f554e2ea25a0005b8aec4a6"></div>
+<div id="altair-viz-4e5e247897e844b593781c0aa7ea0262"></div>
 <script type="text/javascript">
   var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-555ea10b6f554e2ea25a0005b8aec4a6") {
-      outputDiv = document.getElementById("altair-viz-555ea10b6f554e2ea25a0005b8aec4a6");
+    if (outputDiv.id !== "altair-viz-4e5e247897e844b593781c0aa7ea0262") {
+      outputDiv = document.getElementById("altair-viz-4e5e247897e844b593781c0aa7ea0262");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
@@ -1516,7 +1515,7 @@ title="Print to PDF"
         .catch(showError)
         .then(() => displayChart(vegaEmbed));
     }
-  })({"config": {"view": {"continuousWidth": 400, "continuousHeight": 300}}, "data": {"url": "http://localhost:63028/7c70fc15623d8fc932be17103be8051d.json"}, "mark": "boxplot", "encoding": {"x": {"field": "life_expectancy", "type": "quantitative"}, "y": {"field": "region", "type": "nominal"}}, "$schema": "https://vega.github.io/schema/vega-lite/v4.17.0.json"}, {"mode": "vega-lite"});
+  })({"config": {"view": {"continuousWidth": 400, "continuousHeight": 300}}, "data": {"url": "http://localhost:63657/7c70fc15623d8fc932be17103be8051d.json"}, "mark": "boxplot", "encoding": {"x": {"field": "life_expectancy", "type": "quantitative"}, "y": {"field": "region", "type": "nominal"}}, "$schema": "https://vega.github.io/schema/vega-lite/v4.17.0.json"}, {"mode": "vega-lite"});
 </script></div></div>
 </div>
 </section>
@@ -1540,13 +1539,13 @@ title="Print to PDF"
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html">
-<div id="altair-viz-4e19d34b2950478aab389626cd3ef65a"></div>
+<div id="altair-viz-9ec930b91abd4bfbbb3ef9459ed38cd7"></div>
 <script type="text/javascript">
   var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-4e19d34b2950478aab389626cd3ef65a") {
-      outputDiv = document.getElementById("altair-viz-4e19d34b2950478aab389626cd3ef65a");
+    if (outputDiv.id !== "altair-viz-9ec930b91abd4bfbbb3ef9459ed38cd7") {
+      outputDiv = document.getElementById("altair-viz-9ec930b91abd4bfbbb3ef9459ed38cd7");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
@@ -1592,7 +1591,7 @@ title="Print to PDF"
         .catch(showError)
         .then(() => displayChart(vegaEmbed));
     }
-  })({"config": {"view": {"continuousWidth": 400, "continuousHeight": 300}, "axis": {"grid": false}}, "data": {"url": "http://localhost:63028/7c70fc15623d8fc932be17103be8051d.json"}, "facet": {"field": "region", "type": "nominal"}, "spec": {"mark": "area", "encoding": {"color": {"field": "region", "type": "nominal"}, "x": {"field": "life_expectancy", "type": "quantitative"}, "y": {"field": "density", "type": "quantitative"}}, "height": 100, "transform": [{"density": "life_expectancy", "groupby": ["region"], "as": ["life_expectancy", "density"]}]}, "columns": 2, "$schema": "https://vega.github.io/schema/vega-lite/v4.17.0.json"}, {"mode": "vega-lite"});
+  })({"config": {"view": {"continuousWidth": 400, "continuousHeight": 300}, "axis": {"grid": false}}, "data": {"url": "http://localhost:63657/7c70fc15623d8fc932be17103be8051d.json"}, "facet": {"field": "region", "type": "nominal"}, "spec": {"mark": "area", "encoding": {"color": {"field": "region", "type": "nominal"}, "x": {"field": "life_expectancy", "type": "quantitative"}, "y": {"field": "density", "type": "quantitative"}}, "height": 100, "transform": [{"density": "life_expectancy", "groupby": ["region"], "as": ["life_expectancy", "density"]}]}, "columns": 2, "$schema": "https://vega.github.io/schema/vega-lite/v4.17.0.json"}, {"mode": "vega-lite"});
 </script></div></div>
 </div>
 <div class="cell docutils container">
@@ -1613,13 +1612,13 @@ title="Print to PDF"
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html">
-<div id="altair-viz-c44f407c513d4a8cba54d6fe69288409"></div>
+<div id="altair-viz-09fba8386d834f53ac55dc631d406c75"></div>
 <script type="text/javascript">
   var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-c44f407c513d4a8cba54d6fe69288409") {
-      outputDiv = document.getElementById("altair-viz-c44f407c513d4a8cba54d6fe69288409");
+    if (outputDiv.id !== "altair-viz-09fba8386d834f53ac55dc631d406c75") {
+      outputDiv = document.getElementById("altair-viz-09fba8386d834f53ac55dc631d406c75");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
@@ -1665,7 +1664,7 @@ title="Print to PDF"
         .catch(showError)
         .then(() => displayChart(vegaEmbed));
     }
-  })({"config": {"view": {"continuousWidth": 400, "continuousHeight": 300}, "axis": {"grid": false}}, "data": {"url": "http://localhost:63028/7c70fc15623d8fc932be17103be8051d.json"}, "facet": {"field": "region", "type": "nominal"}, "spec": {"mark": {"type": "area", "opacity": 0.3}, "encoding": {"color": {"field": "sub_region", "legend": null, "type": "nominal"}, "x": {"field": "life_expectancy", "type": "quantitative"}, "y": {"field": "density", "type": "quantitative"}}, "height": 100, "transform": [{"density": "life_expectancy", "groupby": ["region", "sub_region"], "as": ["life_expectancy", "density"]}]}, "columns": 2, "$schema": "https://vega.github.io/schema/vega-lite/v4.17.0.json"}, {"mode": "vega-lite"});
+  })({"config": {"view": {"continuousWidth": 400, "continuousHeight": 300}, "axis": {"grid": false}}, "data": {"url": "http://localhost:63657/7c70fc15623d8fc932be17103be8051d.json"}, "facet": {"field": "region", "type": "nominal"}, "spec": {"mark": {"type": "area", "opacity": 0.3}, "encoding": {"color": {"field": "sub_region", "legend": null, "type": "nominal"}, "x": {"field": "life_expectancy", "type": "quantitative"}, "y": {"field": "density", "type": "quantitative"}}, "height": 100, "transform": [{"density": "life_expectancy", "groupby": ["region", "sub_region"], "as": ["life_expectancy", "density"]}]}, "columns": 2, "$schema": "https://vega.github.io/schema/vega-lite/v4.17.0.json"}, {"mode": "vega-lite"});
 </script></div></div>
 </div>
 </section>
@@ -1699,13 +1698,13 @@ title="Print to PDF"
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html">
-<div id="altair-viz-b33a3921a7d84e5492efbb2bc6747d8e"></div>
+<div id="altair-viz-d5b2486da9184865989fd18fa84827f9"></div>
 <script type="text/javascript">
   var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-b33a3921a7d84e5492efbb2bc6747d8e") {
-      outputDiv = document.getElementById("altair-viz-b33a3921a7d84e5492efbb2bc6747d8e");
+    if (outputDiv.id !== "altair-viz-d5b2486da9184865989fd18fa84827f9") {
+      outputDiv = document.getElementById("altair-viz-d5b2486da9184865989fd18fa84827f9");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
@@ -1751,7 +1750,7 @@ title="Print to PDF"
         .catch(showError)
         .then(() => displayChart(vegaEmbed));
     }
-  })({"config": {"view": {"continuousWidth": 400, "continuousHeight": 300}, "axis": {"grid": false}}, "data": {"url": "http://localhost:63028/24844f68a97b6bafa16aa832df90a70f.json"}, "facet": {"field": "year", "timeUnit": "year", "title": "Year", "type": "temporal"}, "spec": {"mark": "circle", "encoding": {"color": {"field": "income_group", "legend": {"title": "Income Group"}, "scale": {"scheme": "tableau10"}, "sort": ["High", "Upper middle", "Lower middle", "Low"], "type": "ordinal"}, "x": {"field": "children_per_woman", "title": "Child per Woman", "type": "quantitative"}, "y": {"field": "child_mortality", "title": "Child Mortality", "type": "quantitative"}}, "height": 150, "width": 180}, "columns": 3, "$schema": "https://vega.github.io/schema/vega-lite/v4.17.0.json"}, {"mode": "vega-lite"});
+  })({"config": {"view": {"continuousWidth": 400, "continuousHeight": 300}, "axis": {"grid": false}}, "data": {"url": "http://localhost:63657/24844f68a97b6bafa16aa832df90a70f.json"}, "facet": {"field": "year", "timeUnit": "year", "title": "Year", "type": "temporal"}, "spec": {"mark": "circle", "encoding": {"color": {"field": "income_group", "legend": {"title": "Income Group"}, "scale": {"scheme": "tableau10"}, "sort": ["High", "Upper middle", "Lower middle", "Low"], "type": "ordinal"}, "x": {"field": "children_per_woman", "title": "Child per Woman", "type": "quantitative"}, "y": {"field": "child_mortality", "title": "Child Mortality", "type": "quantitative"}}, "height": 150, "width": 180}, "columns": 3, "$schema": "https://vega.github.io/schema/vega-lite/v4.17.0.json"}, {"mode": "vega-lite"});
 </script></div></div>
 </div>
 </section>
@@ -1783,13 +1782,13 @@ title="Print to PDF"
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html">
-<div id="altair-viz-023c4c28d24e4cb5bca0d0c4d350bb6b"></div>
+<div id="altair-viz-311a25341d9141c980d313efa3c28869"></div>
 <script type="text/javascript">
   var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-023c4c28d24e4cb5bca0d0c4d350bb6b") {
-      outputDiv = document.getElementById("altair-viz-023c4c28d24e4cb5bca0d0c4d350bb6b");
+    if (outputDiv.id !== "altair-viz-311a25341d9141c980d313efa3c28869") {
+      outputDiv = document.getElementById("altair-viz-311a25341d9141c980d313efa3c28869");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
@@ -1835,7 +1834,7 @@ title="Print to PDF"
         .catch(showError)
         .then(() => displayChart(vegaEmbed));
     }
-  })({"config": {"view": {"continuousWidth": 400, "continuousHeight": 300}, "axis": {"grid": false}}, "repeat": {"column": ["life_expectancy", "child_mortality", "children_per_woman", "years_in_school_women"], "row": ["life_expectancy", "child_mortality", "children_per_woman", "years_in_school_women"]}, "spec": {"data": {"url": "http://localhost:63028/2b34bcf6988f1fcd31a72bd61bee022d.json"}, "mark": {"type": "point", "opacity": 0.3, "size": 10}, "encoding": {"color": {"field": "region", "type": "nominal"}, "x": {"field": {"repeat": "row"}, "scale": {"zero": false}, "type": "quantitative"}, "y": {"field": {"repeat": "column"}, "scale": {"zero": false}, "type": "quantitative"}}, "height": 150, "width": 150}, "$schema": "https://vega.github.io/schema/vega-lite/v4.17.0.json"}, {"mode": "vega-lite"});
+  })({"config": {"view": {"continuousWidth": 400, "continuousHeight": 300}, "axis": {"grid": false}}, "repeat": {"column": ["life_expectancy", "child_mortality", "children_per_woman", "years_in_school_women"], "row": ["life_expectancy", "child_mortality", "children_per_woman", "years_in_school_women"]}, "spec": {"data": {"url": "http://localhost:63657/2b34bcf6988f1fcd31a72bd61bee022d.json"}, "mark": {"type": "point", "opacity": 0.3, "size": 10}, "encoding": {"color": {"field": "region", "type": "nominal"}, "x": {"field": {"repeat": "row"}, "scale": {"zero": false}, "type": "quantitative"}, "y": {"field": {"repeat": "column"}, "scale": {"zero": false}, "type": "quantitative"}}, "height": 150, "width": 150}, "$schema": "https://vega.github.io/schema/vega-lite/v4.17.0.json"}, {"mode": "vega-lite"});
 </script></div></div>
 </div>
 <section id="categorical-variables">
@@ -1858,13 +1857,13 @@ title="Print to PDF"
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html">
-<div id="altair-viz-9568daed8cc544e3aa0d6d463b2e5242"></div>
+<div id="altair-viz-710ec00e816c4eaeadfde56b2c9996b8"></div>
 <script type="text/javascript">
   var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-9568daed8cc544e3aa0d6d463b2e5242") {
-      outputDiv = document.getElementById("altair-viz-9568daed8cc544e3aa0d6d463b2e5242");
+    if (outputDiv.id !== "altair-viz-710ec00e816c4eaeadfde56b2c9996b8") {
+      outputDiv = document.getElementById("altair-viz-710ec00e816c4eaeadfde56b2c9996b8");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
@@ -1910,7 +1909,7 @@ title="Print to PDF"
         .catch(showError)
         .then(() => displayChart(vegaEmbed));
     }
-  })({"config": {"view": {"continuousWidth": 400, "continuousHeight": 300}}, "data": {"url": "http://localhost:63028/7c70fc15623d8fc932be17103be8051d.json"}, "mark": "square", "encoding": {"color": {"aggregate": "count", "type": "quantitative"}, "size": {"aggregate": "count", "scale": {"range": [0, 2000]}, "type": "quantitative"}, "x": {"field": "income_group", "title": "Income Group", "type": "nominal"}, "y": {"field": "region", "title": "Region", "type": "nominal"}}, "height": 300, "width": 300, "$schema": "https://vega.github.io/schema/vega-lite/v4.17.0.json"}, {"mode": "vega-lite"});
+  })({"config": {"view": {"continuousWidth": 400, "continuousHeight": 300}}, "data": {"url": "http://localhost:63657/7c70fc15623d8fc932be17103be8051d.json"}, "mark": "square", "encoding": {"color": {"aggregate": "count", "type": "quantitative"}, "size": {"aggregate": "count", "scale": {"range": [0, 2000]}, "type": "quantitative"}, "x": {"field": "income_group", "title": "Income Group", "type": "nominal"}, "y": {"field": "region", "title": "Region", "type": "nominal"}}, "height": 300, "width": 300, "$schema": "https://vega.github.io/schema/vega-lite/v4.17.0.json"}, {"mode": "vega-lite"});
 </script></div></div>
 </div>
 </section>
@@ -1930,13 +1929,13 @@ title="Print to PDF"
 </div>
 <div class="cell_output docutils container">
 <div class="output text_html">
-<div id="altair-viz-96f7d05514b44331b75fddb931e3efe9"></div>
+<div id="altair-viz-75edd8a3a4a6449a98cb54d9c2a06ee6"></div>
 <script type="text/javascript">
   var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-96f7d05514b44331b75fddb931e3efe9") {
-      outputDiv = document.getElementById("altair-viz-96f7d05514b44331b75fddb931e3efe9");
+    if (outputDiv.id !== "altair-viz-75edd8a3a4a6449a98cb54d9c2a06ee6") {
+      outputDiv = document.getElementById("altair-viz-75edd8a3a4a6449a98cb54d9c2a06ee6");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
@@ -1982,7 +1981,7 @@ title="Print to PDF"
         .catch(showError)
         .then(() => displayChart(vegaEmbed));
     }
-  })({"config": {"view": {"continuousWidth": 400, "continuousHeight": 300}}, "data": {"url": "http://localhost:63028/7c70fc15623d8fc932be17103be8051d.json"}, "mark": "rect", "encoding": {"color": {"aggregate": "count", "type": "quantitative"}, "x": {"bin": {"maxbins": 20}, "field": "years_in_school_women", "type": "quantitative"}, "y": {"bin": {"maxbins": 20}, "field": "children_per_woman", "type": "quantitative"}}, "$schema": "https://vega.github.io/schema/vega-lite/v4.17.0.json"}, {"mode": "vega-lite"});
+  })({"config": {"view": {"continuousWidth": 400, "continuousHeight": 300}}, "data": {"url": "http://localhost:63657/7c70fc15623d8fc932be17103be8051d.json"}, "mark": "rect", "encoding": {"color": {"aggregate": "count", "type": "quantitative"}, "x": {"bin": {"maxbins": 20}, "field": "years_in_school_women", "type": "quantitative"}, "y": {"bin": {"maxbins": 20}, "field": "children_per_woman", "type": "quantitative"}}, "$schema": "https://vega.github.io/schema/vega-lite/v4.17.0.json"}, {"mode": "vega-lite"});
 </script></div></div>
 </div>
 <div class="cell docutils container">
@@ -2132,13 +2131,13 @@ title="Print to PDF"
 </pre></div>
 </div>
 <div class="output text_html">
-<div id="altair-viz-985600caf6194fd0a0296564d28c60d8"></div>
+<div id="altair-viz-36397246c0d34b949c20c6d726085e11"></div>
 <script type="text/javascript">
   var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-985600caf6194fd0a0296564d28c60d8") {
-      outputDiv = document.getElementById("altair-viz-985600caf6194fd0a0296564d28c60d8");
+    if (outputDiv.id !== "altair-viz-36397246c0d34b949c20c6d726085e11") {
+      outputDiv = document.getElementById("altair-viz-36397246c0d34b949c20c6d726085e11");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
@@ -2184,18 +2183,18 @@ title="Print to PDF"
         .catch(showError)
         .then(() => displayChart(vegaEmbed));
     }
-  })({"usermeta": {"embedOptions": {"theme": "dark"}}, "config": {"view": {"continuousWidth": 400, "continuousHeight": 300}}, "layer": [{"mark": "line", "encoding": {"color": {"field": "region", "type": "nominal"}, "x": {"field": "year", "type": "temporal"}, "y": {"aggregate": "mean", "field": "income", "type": "quantitative"}}}, {"mark": {"type": "square", "size": 20}, "encoding": {"color": {"field": "region", "type": "nominal"}, "x": {"field": "year", "type": "temporal"}, "y": {"aggregate": "mean", "field": "income", "type": "quantitative"}}}, {"mark": {"type": "errorband", "opacity": 0.2}, "encoding": {"color": {"field": "region", "type": "nominal"}, "x": {"field": "year", "type": "temporal"}, "y": {"aggregate": "mean", "field": "income", "type": "quantitative"}}}], "data": {"url": "http://localhost:63028/47897c30714ff3fd9deb3b13f3265e65.json"}, "$schema": "https://vega.github.io/schema/vega-lite/v4.17.0.json"}, {"mode": "vega-lite"});
+  })({"usermeta": {"embedOptions": {"theme": "dark"}}, "config": {"view": {"continuousWidth": 400, "continuousHeight": 300}}, "layer": [{"mark": "line", "encoding": {"color": {"field": "region", "type": "nominal"}, "x": {"field": "year", "type": "temporal"}, "y": {"aggregate": "mean", "field": "income", "type": "quantitative"}}}, {"mark": {"type": "square", "size": 20}, "encoding": {"color": {"field": "region", "type": "nominal"}, "x": {"field": "year", "type": "temporal"}, "y": {"aggregate": "mean", "field": "income", "type": "quantitative"}}}, {"mark": {"type": "errorband", "opacity": 0.2}, "encoding": {"color": {"field": "region", "type": "nominal"}, "x": {"field": "year", "type": "temporal"}, "y": {"aggregate": "mean", "field": "income", "type": "quantitative"}}}], "data": {"url": "http://localhost:63657/47897c30714ff3fd9deb3b13f3265e65.json"}, "$schema": "https://vega.github.io/schema/vega-lite/v4.17.0.json"}, {"mode": "vega-lite"});
 </script></div><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>DEFAULT
 </pre></div>
 </div>
 <div class="output text_html">
-<div id="altair-viz-d8af873cc533487aac428c0ab61aae5e"></div>
+<div id="altair-viz-1a36560ac6944565beef2a8c57a5a9aa"></div>
 <script type="text/javascript">
   var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-d8af873cc533487aac428c0ab61aae5e") {
-      outputDiv = document.getElementById("altair-viz-d8af873cc533487aac428c0ab61aae5e");
+    if (outputDiv.id !== "altair-viz-1a36560ac6944565beef2a8c57a5a9aa") {
+      outputDiv = document.getElementById("altair-viz-1a36560ac6944565beef2a8c57a5a9aa");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
@@ -2241,18 +2240,18 @@ title="Print to PDF"
         .catch(showError)
         .then(() => displayChart(vegaEmbed));
     }
-  })({"config": {"view": {"continuousWidth": 400, "continuousHeight": 300}}, "layer": [{"mark": "line", "encoding": {"color": {"field": "region", "type": "nominal"}, "x": {"field": "year", "type": "temporal"}, "y": {"aggregate": "mean", "field": "income", "type": "quantitative"}}}, {"mark": {"type": "square", "size": 20}, "encoding": {"color": {"field": "region", "type": "nominal"}, "x": {"field": "year", "type": "temporal"}, "y": {"aggregate": "mean", "field": "income", "type": "quantitative"}}}, {"mark": {"type": "errorband", "opacity": 0.2}, "encoding": {"color": {"field": "region", "type": "nominal"}, "x": {"field": "year", "type": "temporal"}, "y": {"aggregate": "mean", "field": "income", "type": "quantitative"}}}], "data": {"url": "http://localhost:63028/47897c30714ff3fd9deb3b13f3265e65.json"}, "$schema": "https://vega.github.io/schema/vega-lite/v4.17.0.json"}, {"mode": "vega-lite"});
+  })({"config": {"view": {"continuousWidth": 400, "continuousHeight": 300}}, "layer": [{"mark": "line", "encoding": {"color": {"field": "region", "type": "nominal"}, "x": {"field": "year", "type": "temporal"}, "y": {"aggregate": "mean", "field": "income", "type": "quantitative"}}}, {"mark": {"type": "square", "size": 20}, "encoding": {"color": {"field": "region", "type": "nominal"}, "x": {"field": "year", "type": "temporal"}, "y": {"aggregate": "mean", "field": "income", "type": "quantitative"}}}, {"mark": {"type": "errorband", "opacity": 0.2}, "encoding": {"color": {"field": "region", "type": "nominal"}, "x": {"field": "year", "type": "temporal"}, "y": {"aggregate": "mean", "field": "income", "type": "quantitative"}}}], "data": {"url": "http://localhost:63657/47897c30714ff3fd9deb3b13f3265e65.json"}, "$schema": "https://vega.github.io/schema/vega-lite/v4.17.0.json"}, {"mode": "vega-lite"});
 </script></div><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>FIVETHIRTYEIGHT
 </pre></div>
 </div>
 <div class="output text_html">
-<div id="altair-viz-a27989173dcc4cf7b72a0a9bf04e78c5"></div>
+<div id="altair-viz-fea325ae2812421ba29e9a09974f553e"></div>
 <script type="text/javascript">
   var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-a27989173dcc4cf7b72a0a9bf04e78c5") {
-      outputDiv = document.getElementById("altair-viz-a27989173dcc4cf7b72a0a9bf04e78c5");
+    if (outputDiv.id !== "altair-viz-fea325ae2812421ba29e9a09974f553e") {
+      outputDiv = document.getElementById("altair-viz-fea325ae2812421ba29e9a09974f553e");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
@@ -2298,18 +2297,18 @@ title="Print to PDF"
         .catch(showError)
         .then(() => displayChart(vegaEmbed));
     }
-  })({"usermeta": {"embedOptions": {"theme": "fivethirtyeight"}}, "config": {"view": {"continuousWidth": 400, "continuousHeight": 300}}, "layer": [{"mark": "line", "encoding": {"color": {"field": "region", "type": "nominal"}, "x": {"field": "year", "type": "temporal"}, "y": {"aggregate": "mean", "field": "income", "type": "quantitative"}}}, {"mark": {"type": "square", "size": 20}, "encoding": {"color": {"field": "region", "type": "nominal"}, "x": {"field": "year", "type": "temporal"}, "y": {"aggregate": "mean", "field": "income", "type": "quantitative"}}}, {"mark": {"type": "errorband", "opacity": 0.2}, "encoding": {"color": {"field": "region", "type": "nominal"}, "x": {"field": "year", "type": "temporal"}, "y": {"aggregate": "mean", "field": "income", "type": "quantitative"}}}], "data": {"url": "http://localhost:63028/47897c30714ff3fd9deb3b13f3265e65.json"}, "$schema": "https://vega.github.io/schema/vega-lite/v4.17.0.json"}, {"mode": "vega-lite"});
+  })({"usermeta": {"embedOptions": {"theme": "fivethirtyeight"}}, "config": {"view": {"continuousWidth": 400, "continuousHeight": 300}}, "layer": [{"mark": "line", "encoding": {"color": {"field": "region", "type": "nominal"}, "x": {"field": "year", "type": "temporal"}, "y": {"aggregate": "mean", "field": "income", "type": "quantitative"}}}, {"mark": {"type": "square", "size": 20}, "encoding": {"color": {"field": "region", "type": "nominal"}, "x": {"field": "year", "type": "temporal"}, "y": {"aggregate": "mean", "field": "income", "type": "quantitative"}}}, {"mark": {"type": "errorband", "opacity": 0.2}, "encoding": {"color": {"field": "region", "type": "nominal"}, "x": {"field": "year", "type": "temporal"}, "y": {"aggregate": "mean", "field": "income", "type": "quantitative"}}}], "data": {"url": "http://localhost:63657/47897c30714ff3fd9deb3b13f3265e65.json"}, "$schema": "https://vega.github.io/schema/vega-lite/v4.17.0.json"}, {"mode": "vega-lite"});
 </script></div><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>GGPLOT2
 </pre></div>
 </div>
 <div class="output text_html">
-<div id="altair-viz-0bc93f1e0330409193e05aeaea34145a"></div>
+<div id="altair-viz-319bfa3548744529a34146759897f2df"></div>
 <script type="text/javascript">
   var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-0bc93f1e0330409193e05aeaea34145a") {
-      outputDiv = document.getElementById("altair-viz-0bc93f1e0330409193e05aeaea34145a");
+    if (outputDiv.id !== "altair-viz-319bfa3548744529a34146759897f2df") {
+      outputDiv = document.getElementById("altair-viz-319bfa3548744529a34146759897f2df");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
@@ -2355,18 +2354,18 @@ title="Print to PDF"
         .catch(showError)
         .then(() => displayChart(vegaEmbed));
     }
-  })({"usermeta": {"embedOptions": {"theme": "ggplot2"}}, "config": {"view": {"continuousWidth": 400, "continuousHeight": 300}}, "layer": [{"mark": "line", "encoding": {"color": {"field": "region", "type": "nominal"}, "x": {"field": "year", "type": "temporal"}, "y": {"aggregate": "mean", "field": "income", "type": "quantitative"}}}, {"mark": {"type": "square", "size": 20}, "encoding": {"color": {"field": "region", "type": "nominal"}, "x": {"field": "year", "type": "temporal"}, "y": {"aggregate": "mean", "field": "income", "type": "quantitative"}}}, {"mark": {"type": "errorband", "opacity": 0.2}, "encoding": {"color": {"field": "region", "type": "nominal"}, "x": {"field": "year", "type": "temporal"}, "y": {"aggregate": "mean", "field": "income", "type": "quantitative"}}}], "data": {"url": "http://localhost:63028/47897c30714ff3fd9deb3b13f3265e65.json"}, "$schema": "https://vega.github.io/schema/vega-lite/v4.17.0.json"}, {"mode": "vega-lite"});
+  })({"usermeta": {"embedOptions": {"theme": "ggplot2"}}, "config": {"view": {"continuousWidth": 400, "continuousHeight": 300}}, "layer": [{"mark": "line", "encoding": {"color": {"field": "region", "type": "nominal"}, "x": {"field": "year", "type": "temporal"}, "y": {"aggregate": "mean", "field": "income", "type": "quantitative"}}}, {"mark": {"type": "square", "size": 20}, "encoding": {"color": {"field": "region", "type": "nominal"}, "x": {"field": "year", "type": "temporal"}, "y": {"aggregate": "mean", "field": "income", "type": "quantitative"}}}, {"mark": {"type": "errorband", "opacity": 0.2}, "encoding": {"color": {"field": "region", "type": "nominal"}, "x": {"field": "year", "type": "temporal"}, "y": {"aggregate": "mean", "field": "income", "type": "quantitative"}}}], "data": {"url": "http://localhost:63657/47897c30714ff3fd9deb3b13f3265e65.json"}, "$schema": "https://vega.github.io/schema/vega-lite/v4.17.0.json"}, {"mode": "vega-lite"});
 </script></div><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>LATIMES
 </pre></div>
 </div>
 <div class="output text_html">
-<div id="altair-viz-3ed2c18616cc47eab3f4ddb47ce49320"></div>
+<div id="altair-viz-7d034dde1d43477cbf62afa5f1869e14"></div>
 <script type="text/javascript">
   var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-3ed2c18616cc47eab3f4ddb47ce49320") {
-      outputDiv = document.getElementById("altair-viz-3ed2c18616cc47eab3f4ddb47ce49320");
+    if (outputDiv.id !== "altair-viz-7d034dde1d43477cbf62afa5f1869e14") {
+      outputDiv = document.getElementById("altair-viz-7d034dde1d43477cbf62afa5f1869e14");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
@@ -2412,18 +2411,18 @@ title="Print to PDF"
         .catch(showError)
         .then(() => displayChart(vegaEmbed));
     }
-  })({"usermeta": {"embedOptions": {"theme": "latimes"}}, "config": {"view": {"continuousWidth": 400, "continuousHeight": 300}}, "layer": [{"mark": "line", "encoding": {"color": {"field": "region", "type": "nominal"}, "x": {"field": "year", "type": "temporal"}, "y": {"aggregate": "mean", "field": "income", "type": "quantitative"}}}, {"mark": {"type": "square", "size": 20}, "encoding": {"color": {"field": "region", "type": "nominal"}, "x": {"field": "year", "type": "temporal"}, "y": {"aggregate": "mean", "field": "income", "type": "quantitative"}}}, {"mark": {"type": "errorband", "opacity": 0.2}, "encoding": {"color": {"field": "region", "type": "nominal"}, "x": {"field": "year", "type": "temporal"}, "y": {"aggregate": "mean", "field": "income", "type": "quantitative"}}}], "data": {"url": "http://localhost:63028/47897c30714ff3fd9deb3b13f3265e65.json"}, "$schema": "https://vega.github.io/schema/vega-lite/v4.17.0.json"}, {"mode": "vega-lite"});
+  })({"usermeta": {"embedOptions": {"theme": "latimes"}}, "config": {"view": {"continuousWidth": 400, "continuousHeight": 300}}, "layer": [{"mark": "line", "encoding": {"color": {"field": "region", "type": "nominal"}, "x": {"field": "year", "type": "temporal"}, "y": {"aggregate": "mean", "field": "income", "type": "quantitative"}}}, {"mark": {"type": "square", "size": 20}, "encoding": {"color": {"field": "region", "type": "nominal"}, "x": {"field": "year", "type": "temporal"}, "y": {"aggregate": "mean", "field": "income", "type": "quantitative"}}}, {"mark": {"type": "errorband", "opacity": 0.2}, "encoding": {"color": {"field": "region", "type": "nominal"}, "x": {"field": "year", "type": "temporal"}, "y": {"aggregate": "mean", "field": "income", "type": "quantitative"}}}], "data": {"url": "http://localhost:63657/47897c30714ff3fd9deb3b13f3265e65.json"}, "$schema": "https://vega.github.io/schema/vega-lite/v4.17.0.json"}, {"mode": "vega-lite"});
 </script></div><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>NONE
 </pre></div>
 </div>
 <div class="output text_html">
-<div id="altair-viz-ed9ccc5900d14df1b6bf6a8e939f0f9b"></div>
+<div id="altair-viz-aca69d17ef07457d8b0b106fefbdc3c5"></div>
 <script type="text/javascript">
   var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-ed9ccc5900d14df1b6bf6a8e939f0f9b") {
-      outputDiv = document.getElementById("altair-viz-ed9ccc5900d14df1b6bf6a8e939f0f9b");
+    if (outputDiv.id !== "altair-viz-aca69d17ef07457d8b0b106fefbdc3c5") {
+      outputDiv = document.getElementById("altair-viz-aca69d17ef07457d8b0b106fefbdc3c5");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
@@ -2469,18 +2468,18 @@ title="Print to PDF"
         .catch(showError)
         .then(() => displayChart(vegaEmbed));
     }
-  })({"layer": [{"mark": "line", "encoding": {"color": {"field": "region", "type": "nominal"}, "x": {"field": "year", "type": "temporal"}, "y": {"aggregate": "mean", "field": "income", "type": "quantitative"}}}, {"mark": {"type": "square", "size": 20}, "encoding": {"color": {"field": "region", "type": "nominal"}, "x": {"field": "year", "type": "temporal"}, "y": {"aggregate": "mean", "field": "income", "type": "quantitative"}}}, {"mark": {"type": "errorband", "opacity": 0.2}, "encoding": {"color": {"field": "region", "type": "nominal"}, "x": {"field": "year", "type": "temporal"}, "y": {"aggregate": "mean", "field": "income", "type": "quantitative"}}}], "data": {"url": "http://localhost:63028/47897c30714ff3fd9deb3b13f3265e65.json"}, "$schema": "https://vega.github.io/schema/vega-lite/v4.17.0.json"}, {"mode": "vega-lite"});
+  })({"layer": [{"mark": "line", "encoding": {"color": {"field": "region", "type": "nominal"}, "x": {"field": "year", "type": "temporal"}, "y": {"aggregate": "mean", "field": "income", "type": "quantitative"}}}, {"mark": {"type": "square", "size": 20}, "encoding": {"color": {"field": "region", "type": "nominal"}, "x": {"field": "year", "type": "temporal"}, "y": {"aggregate": "mean", "field": "income", "type": "quantitative"}}}, {"mark": {"type": "errorband", "opacity": 0.2}, "encoding": {"color": {"field": "region", "type": "nominal"}, "x": {"field": "year", "type": "temporal"}, "y": {"aggregate": "mean", "field": "income", "type": "quantitative"}}}], "data": {"url": "http://localhost:63657/47897c30714ff3fd9deb3b13f3265e65.json"}, "$schema": "https://vega.github.io/schema/vega-lite/v4.17.0.json"}, {"mode": "vega-lite"});
 </script></div><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>OPAQUE
 </pre></div>
 </div>
 <div class="output text_html">
-<div id="altair-viz-4b5484f51481492782a161dde62fc5db"></div>
+<div id="altair-viz-5c0bd4825e4f4c17830164d2c92dfc44"></div>
 <script type="text/javascript">
   var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-4b5484f51481492782a161dde62fc5db") {
-      outputDiv = document.getElementById("altair-viz-4b5484f51481492782a161dde62fc5db");
+    if (outputDiv.id !== "altair-viz-5c0bd4825e4f4c17830164d2c92dfc44") {
+      outputDiv = document.getElementById("altair-viz-5c0bd4825e4f4c17830164d2c92dfc44");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
@@ -2526,18 +2525,18 @@ title="Print to PDF"
         .catch(showError)
         .then(() => displayChart(vegaEmbed));
     }
-  })({"config": {"background": "white", "view": {"continuousWidth": 400, "continuousHeight": 300}}, "layer": [{"mark": "line", "encoding": {"color": {"field": "region", "type": "nominal"}, "x": {"field": "year", "type": "temporal"}, "y": {"aggregate": "mean", "field": "income", "type": "quantitative"}}}, {"mark": {"type": "square", "size": 20}, "encoding": {"color": {"field": "region", "type": "nominal"}, "x": {"field": "year", "type": "temporal"}, "y": {"aggregate": "mean", "field": "income", "type": "quantitative"}}}, {"mark": {"type": "errorband", "opacity": 0.2}, "encoding": {"color": {"field": "region", "type": "nominal"}, "x": {"field": "year", "type": "temporal"}, "y": {"aggregate": "mean", "field": "income", "type": "quantitative"}}}], "data": {"url": "http://localhost:63028/47897c30714ff3fd9deb3b13f3265e65.json"}, "$schema": "https://vega.github.io/schema/vega-lite/v4.17.0.json"}, {"mode": "vega-lite"});
+  })({"config": {"background": "white", "view": {"continuousWidth": 400, "continuousHeight": 300}}, "layer": [{"mark": "line", "encoding": {"color": {"field": "region", "type": "nominal"}, "x": {"field": "year", "type": "temporal"}, "y": {"aggregate": "mean", "field": "income", "type": "quantitative"}}}, {"mark": {"type": "square", "size": 20}, "encoding": {"color": {"field": "region", "type": "nominal"}, "x": {"field": "year", "type": "temporal"}, "y": {"aggregate": "mean", "field": "income", "type": "quantitative"}}}, {"mark": {"type": "errorband", "opacity": 0.2}, "encoding": {"color": {"field": "region", "type": "nominal"}, "x": {"field": "year", "type": "temporal"}, "y": {"aggregate": "mean", "field": "income", "type": "quantitative"}}}], "data": {"url": "http://localhost:63657/47897c30714ff3fd9deb3b13f3265e65.json"}, "$schema": "https://vega.github.io/schema/vega-lite/v4.17.0.json"}, {"mode": "vega-lite"});
 </script></div><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>QUARTZ
 </pre></div>
 </div>
 <div class="output text_html">
-<div id="altair-viz-ed1f45e58aab400897a6b9f25ac4721b"></div>
+<div id="altair-viz-282a57ded08d4b79add15a02a3406ec6"></div>
 <script type="text/javascript">
   var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-ed1f45e58aab400897a6b9f25ac4721b") {
-      outputDiv = document.getElementById("altair-viz-ed1f45e58aab400897a6b9f25ac4721b");
+    if (outputDiv.id !== "altair-viz-282a57ded08d4b79add15a02a3406ec6") {
+      outputDiv = document.getElementById("altair-viz-282a57ded08d4b79add15a02a3406ec6");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
@@ -2583,18 +2582,18 @@ title="Print to PDF"
         .catch(showError)
         .then(() => displayChart(vegaEmbed));
     }
-  })({"usermeta": {"embedOptions": {"theme": "quartz"}}, "config": {"view": {"continuousWidth": 400, "continuousHeight": 300}}, "layer": [{"mark": "line", "encoding": {"color": {"field": "region", "type": "nominal"}, "x": {"field": "year", "type": "temporal"}, "y": {"aggregate": "mean", "field": "income", "type": "quantitative"}}}, {"mark": {"type": "square", "size": 20}, "encoding": {"color": {"field": "region", "type": "nominal"}, "x": {"field": "year", "type": "temporal"}, "y": {"aggregate": "mean", "field": "income", "type": "quantitative"}}}, {"mark": {"type": "errorband", "opacity": 0.2}, "encoding": {"color": {"field": "region", "type": "nominal"}, "x": {"field": "year", "type": "temporal"}, "y": {"aggregate": "mean", "field": "income", "type": "quantitative"}}}], "data": {"url": "http://localhost:63028/47897c30714ff3fd9deb3b13f3265e65.json"}, "$schema": "https://vega.github.io/schema/vega-lite/v4.17.0.json"}, {"mode": "vega-lite"});
+  })({"usermeta": {"embedOptions": {"theme": "quartz"}}, "config": {"view": {"continuousWidth": 400, "continuousHeight": 300}}, "layer": [{"mark": "line", "encoding": {"color": {"field": "region", "type": "nominal"}, "x": {"field": "year", "type": "temporal"}, "y": {"aggregate": "mean", "field": "income", "type": "quantitative"}}}, {"mark": {"type": "square", "size": 20}, "encoding": {"color": {"field": "region", "type": "nominal"}, "x": {"field": "year", "type": "temporal"}, "y": {"aggregate": "mean", "field": "income", "type": "quantitative"}}}, {"mark": {"type": "errorband", "opacity": 0.2}, "encoding": {"color": {"field": "region", "type": "nominal"}, "x": {"field": "year", "type": "temporal"}, "y": {"aggregate": "mean", "field": "income", "type": "quantitative"}}}], "data": {"url": "http://localhost:63657/47897c30714ff3fd9deb3b13f3265e65.json"}, "$schema": "https://vega.github.io/schema/vega-lite/v4.17.0.json"}, {"mode": "vega-lite"});
 </script></div><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>URBANINSTITUTE
 </pre></div>
 </div>
 <div class="output text_html">
-<div id="altair-viz-ba05eaa0fbf64c7a99a3fb9bb675807e"></div>
+<div id="altair-viz-569e20a40df64665883ed41f8f0f0b0b"></div>
 <script type="text/javascript">
   var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-ba05eaa0fbf64c7a99a3fb9bb675807e") {
-      outputDiv = document.getElementById("altair-viz-ba05eaa0fbf64c7a99a3fb9bb675807e");
+    if (outputDiv.id !== "altair-viz-569e20a40df64665883ed41f8f0f0b0b") {
+      outputDiv = document.getElementById("altair-viz-569e20a40df64665883ed41f8f0f0b0b");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
@@ -2640,18 +2639,18 @@ title="Print to PDF"
         .catch(showError)
         .then(() => displayChart(vegaEmbed));
     }
-  })({"usermeta": {"embedOptions": {"theme": "urbaninstitute"}}, "config": {"view": {"continuousWidth": 400, "continuousHeight": 300}}, "layer": [{"mark": "line", "encoding": {"color": {"field": "region", "type": "nominal"}, "x": {"field": "year", "type": "temporal"}, "y": {"aggregate": "mean", "field": "income", "type": "quantitative"}}}, {"mark": {"type": "square", "size": 20}, "encoding": {"color": {"field": "region", "type": "nominal"}, "x": {"field": "year", "type": "temporal"}, "y": {"aggregate": "mean", "field": "income", "type": "quantitative"}}}, {"mark": {"type": "errorband", "opacity": 0.2}, "encoding": {"color": {"field": "region", "type": "nominal"}, "x": {"field": "year", "type": "temporal"}, "y": {"aggregate": "mean", "field": "income", "type": "quantitative"}}}], "data": {"url": "http://localhost:63028/47897c30714ff3fd9deb3b13f3265e65.json"}, "$schema": "https://vega.github.io/schema/vega-lite/v4.17.0.json"}, {"mode": "vega-lite"});
+  })({"usermeta": {"embedOptions": {"theme": "urbaninstitute"}}, "config": {"view": {"continuousWidth": 400, "continuousHeight": 300}}, "layer": [{"mark": "line", "encoding": {"color": {"field": "region", "type": "nominal"}, "x": {"field": "year", "type": "temporal"}, "y": {"aggregate": "mean", "field": "income", "type": "quantitative"}}}, {"mark": {"type": "square", "size": 20}, "encoding": {"color": {"field": "region", "type": "nominal"}, "x": {"field": "year", "type": "temporal"}, "y": {"aggregate": "mean", "field": "income", "type": "quantitative"}}}, {"mark": {"type": "errorband", "opacity": 0.2}, "encoding": {"color": {"field": "region", "type": "nominal"}, "x": {"field": "year", "type": "temporal"}, "y": {"aggregate": "mean", "field": "income", "type": "quantitative"}}}], "data": {"url": "http://localhost:63657/47897c30714ff3fd9deb3b13f3265e65.json"}, "$schema": "https://vega.github.io/schema/vega-lite/v4.17.0.json"}, {"mode": "vega-lite"});
 </script></div><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>VOX
 </pre></div>
 </div>
 <div class="output text_html">
-<div id="altair-viz-3344084ba91a459f9d5fc2c50d05a9ef"></div>
+<div id="altair-viz-b2789612da064fbdb96148c02b8d55e4"></div>
 <script type="text/javascript">
   var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-3344084ba91a459f9d5fc2c50d05a9ef") {
-      outputDiv = document.getElementById("altair-viz-3344084ba91a459f9d5fc2c50d05a9ef");
+    if (outputDiv.id !== "altair-viz-b2789612da064fbdb96148c02b8d55e4") {
+      outputDiv = document.getElementById("altair-viz-b2789612da064fbdb96148c02b8d55e4");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
@@ -2697,7 +2696,7 @@ title="Print to PDF"
         .catch(showError)
         .then(() => displayChart(vegaEmbed));
     }
-  })({"usermeta": {"embedOptions": {"theme": "vox"}}, "config": {"view": {"continuousWidth": 400, "continuousHeight": 300}}, "layer": [{"mark": "line", "encoding": {"color": {"field": "region", "type": "nominal"}, "x": {"field": "year", "type": "temporal"}, "y": {"aggregate": "mean", "field": "income", "type": "quantitative"}}}, {"mark": {"type": "square", "size": 20}, "encoding": {"color": {"field": "region", "type": "nominal"}, "x": {"field": "year", "type": "temporal"}, "y": {"aggregate": "mean", "field": "income", "type": "quantitative"}}}, {"mark": {"type": "errorband", "opacity": 0.2}, "encoding": {"color": {"field": "region", "type": "nominal"}, "x": {"field": "year", "type": "temporal"}, "y": {"aggregate": "mean", "field": "income", "type": "quantitative"}}}], "data": {"url": "http://localhost:63028/47897c30714ff3fd9deb3b13f3265e65.json"}, "$schema": "https://vega.github.io/schema/vega-lite/v4.17.0.json"}, {"mode": "vega-lite"});
+  })({"usermeta": {"embedOptions": {"theme": "vox"}}, "config": {"view": {"continuousWidth": 400, "continuousHeight": 300}}, "layer": [{"mark": "line", "encoding": {"color": {"field": "region", "type": "nominal"}, "x": {"field": "year", "type": "temporal"}, "y": {"aggregate": "mean", "field": "income", "type": "quantitative"}}}, {"mark": {"type": "square", "size": 20}, "encoding": {"color": {"field": "region", "type": "nominal"}, "x": {"field": "year", "type": "temporal"}, "y": {"aggregate": "mean", "field": "income", "type": "quantitative"}}}, {"mark": {"type": "errorband", "opacity": 0.2}, "encoding": {"color": {"field": "region", "type": "nominal"}, "x": {"field": "year", "type": "temporal"}, "y": {"aggregate": "mean", "field": "income", "type": "quantitative"}}}], "data": {"url": "http://localhost:63657/47897c30714ff3fd9deb3b13f3265e65.json"}, "$schema": "https://vega.github.io/schema/vega-lite/v4.17.0.json"}, {"mode": "vega-lite"});
 </script></div></div>
 </div>
 </section>
