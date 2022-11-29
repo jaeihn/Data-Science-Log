@@ -644,12 +644,12 @@ title="Print to PDF"
 <span class="n">alt</span><span class="o">.</span><span class="n">data_transformers</span><span class="o">.</span><span class="n">enable</span><span class="p">(</span><span class="s1">&#39;data_server&#39;</span><span class="p">)</span>
 
 <span class="c1"># Save a PNG blob as a backup for when the Altair plots do not render</span>
-<span class="n">alt</span><span class="o">.</span><span class="n">renderers</span><span class="o">.</span><span class="n">enable</span><span class="p">(</span><span class="s1">&#39;mimetype&#39;</span><span class="p">)</span>
+<span class="c1"># alt.renderers.enable(&#39;mimetype&#39;)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>RendererRegistry.enable(&#39;mimetype&#39;)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>DataTransformerRegistry.enable(&#39;data_server&#39;)
 </pre></div>
 </div>
 </div>
@@ -696,14 +696,61 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;VegaLite 4 object&gt;
+<div class="output text_html">
+<div id="altair-viz-63dcb79172bd4ad7a5d77c4b8e02e3bb"></div>
+<script type="text/javascript">
+  var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
+  (function(spec, embedOpt){
+    let outputDiv = document.currentScript.previousElementSibling;
+    if (outputDiv.id !== "altair-viz-63dcb79172bd4ad7a5d77c4b8e02e3bb") {
+      outputDiv = document.getElementById("altair-viz-63dcb79172bd4ad7a5d77c4b8e02e3bb");
+    }
+    const paths = {
+      "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
+      "vega-lib": "https://cdn.jsdelivr.net/npm//vega-lib?noext",
+      "vega-lite": "https://cdn.jsdelivr.net/npm//vega-lite@4.17.0?noext",
+      "vega-embed": "https://cdn.jsdelivr.net/npm//vega-embed@6?noext",
+    };
 
-If you see this message, it means the renderer has not been properly enabled
-for the frontend that you are using. For more information, see
-https://altair-viz.github.io/user_guide/troubleshooting.html
-</pre></div>
-</div>
-</div>
+    function maybeLoadScript(lib, version) {
+      var key = `${lib.replace("-", "")}_version`;
+      return (VEGA_DEBUG[key] == version) ?
+        Promise.resolve(paths[lib]) :
+        new Promise(function(resolve, reject) {
+          var s = document.createElement('script');
+          document.getElementsByTagName("head")[0].appendChild(s);
+          s.async = true;
+          s.onload = () => {
+            VEGA_DEBUG[key] = version;
+            return resolve(paths[lib]);
+          };
+          s.onerror = () => reject(`Error loading script: ${paths[lib]}`);
+          s.src = paths[lib];
+        });
+    }
+
+    function showError(err) {
+      outputDiv.innerHTML = `<div class="error" style="color:red;">${err}</div>`;
+      throw err;
+    }
+
+    function displayChart(vegaEmbed) {
+      vegaEmbed(outputDiv, spec, embedOpt)
+        .catch(err => showError(`Javascript Error: ${err.message}<br>This usually means there's a typo in your chart specification. See the javascript console for the full traceback.`));
+    }
+
+    if(typeof define === "function" && define.amd) {
+      requirejs.config({paths});
+      require(["vega-embed"], displayChart, err => showError(`Error loading script: ${err.message}`));
+    } else {
+      maybeLoadScript("vega", "5")
+        .then(() => maybeLoadScript("vega-lite", "4.17.0"))
+        .then(() => maybeLoadScript("vega-embed", "6"))
+        .catch(showError)
+        .then(() => displayChart(vegaEmbed));
+    }
+  })({"config": {"view": {"continuousWidth": 400, "continuousHeight": 300, "strokeWidth": 0}, "axis": {"grid": false}}, "layer": [{"mark": "bar", "encoding": {"color": {"field": "region", "type": "nominal"}, "x": {"aggregate": "mean", "field": "life_expectancy", "type": "quantitative"}, "y": {"field": "region", "sort": "-x", "type": "nominal"}}}, {"mark": {"type": "text", "align": "left", "baseline": "middle", "dx": 10}, "encoding": {"color": {"field": "region", "type": "nominal"}, "text": {"aggregate": "mean", "field": "life_expectancy", "format": "0.2f", "type": "quantitative"}, "x": {"aggregate": "mean", "field": "life_expectancy", "type": "quantitative"}, "y": {"field": "region", "sort": "-x", "type": "nominal"}}}], "data": {"url": "http://localhost:63908/18c879ec7b603e873965a28258ef4f7a.json"}, "$schema": "https://vega.github.io/schema/vega-lite/v4.17.0.json"}, {"mode": "vega-lite"});
+</script></div></div>
 </div>
 <section id="bar-chart-showing-polarity-in-values">
 <h3>Bar chart showing polarity in values<a class="headerlink" href="#bar-chart-showing-polarity-in-values" title="Permalink to this headline">#</a></h3>
@@ -723,14 +770,61 @@ https://altair-viz.github.io/user_guide/troubleshooting.html
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;VegaLite 4 object&gt;
+<div class="output text_html">
+<div id="altair-viz-e832a733970f481bbc691fd30e417d43"></div>
+<script type="text/javascript">
+  var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
+  (function(spec, embedOpt){
+    let outputDiv = document.currentScript.previousElementSibling;
+    if (outputDiv.id !== "altair-viz-e832a733970f481bbc691fd30e417d43") {
+      outputDiv = document.getElementById("altair-viz-e832a733970f481bbc691fd30e417d43");
+    }
+    const paths = {
+      "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
+      "vega-lib": "https://cdn.jsdelivr.net/npm//vega-lib?noext",
+      "vega-lite": "https://cdn.jsdelivr.net/npm//vega-lite@4.17.0?noext",
+      "vega-embed": "https://cdn.jsdelivr.net/npm//vega-embed@6?noext",
+    };
 
-If you see this message, it means the renderer has not been properly enabled
-for the frontend that you are using. For more information, see
-https://altair-viz.github.io/user_guide/troubleshooting.html
-</pre></div>
-</div>
-</div>
+    function maybeLoadScript(lib, version) {
+      var key = `${lib.replace("-", "")}_version`;
+      return (VEGA_DEBUG[key] == version) ?
+        Promise.resolve(paths[lib]) :
+        new Promise(function(resolve, reject) {
+          var s = document.createElement('script');
+          document.getElementsByTagName("head")[0].appendChild(s);
+          s.async = true;
+          s.onload = () => {
+            VEGA_DEBUG[key] = version;
+            return resolve(paths[lib]);
+          };
+          s.onerror = () => reject(`Error loading script: ${paths[lib]}`);
+          s.src = paths[lib];
+        });
+    }
+
+    function showError(err) {
+      outputDiv.innerHTML = `<div class="error" style="color:red;">${err}</div>`;
+      throw err;
+    }
+
+    function displayChart(vegaEmbed) {
+      vegaEmbed(outputDiv, spec, embedOpt)
+        .catch(err => showError(`Javascript Error: ${err.message}<br>This usually means there's a typo in your chart specification. See the javascript console for the full traceback.`));
+    }
+
+    if(typeof define === "function" && define.amd) {
+      requirejs.config({paths});
+      require(["vega-embed"], displayChart, err => showError(`Error loading script: ${err.message}`));
+    } else {
+      maybeLoadScript("vega", "5")
+        .then(() => maybeLoadScript("vega-lite", "4.17.0"))
+        .then(() => maybeLoadScript("vega-embed", "6"))
+        .catch(showError)
+        .then(() => displayChart(vegaEmbed));
+    }
+  })({"config": {"view": {"continuousWidth": 400, "continuousHeight": 300}}, "data": {"url": "http://localhost:63908/991a3da9f30f828a4a861c02d0149749.json"}, "mark": "bar", "encoding": {"color": {"field": "sub_region", "type": "nominal"}, "x": {"field": "income_from_avg", "type": "quantitative"}, "y": {"field": "country", "sort": "-x", "title": "Language", "type": "nominal"}}, "$schema": "https://vega.github.io/schema/vega-lite/v4.17.0.json"}, {"mode": "vega-lite"});
+</script></div></div>
 </div>
 </section>
 </section>
@@ -758,14 +852,61 @@ https://altair-viz.github.io/user_guide/troubleshooting.html
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;VegaLite 4 object&gt;
+<div class="output text_html">
+<div id="altair-viz-7133129410034f62b449fcca44274b0d"></div>
+<script type="text/javascript">
+  var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
+  (function(spec, embedOpt){
+    let outputDiv = document.currentScript.previousElementSibling;
+    if (outputDiv.id !== "altair-viz-7133129410034f62b449fcca44274b0d") {
+      outputDiv = document.getElementById("altair-viz-7133129410034f62b449fcca44274b0d");
+    }
+    const paths = {
+      "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
+      "vega-lib": "https://cdn.jsdelivr.net/npm//vega-lib?noext",
+      "vega-lite": "https://cdn.jsdelivr.net/npm//vega-lite@4.17.0?noext",
+      "vega-embed": "https://cdn.jsdelivr.net/npm//vega-embed@6?noext",
+    };
 
-If you see this message, it means the renderer has not been properly enabled
-for the frontend that you are using. For more information, see
-https://altair-viz.github.io/user_guide/troubleshooting.html
-</pre></div>
-</div>
-</div>
+    function maybeLoadScript(lib, version) {
+      var key = `${lib.replace("-", "")}_version`;
+      return (VEGA_DEBUG[key] == version) ?
+        Promise.resolve(paths[lib]) :
+        new Promise(function(resolve, reject) {
+          var s = document.createElement('script');
+          document.getElementsByTagName("head")[0].appendChild(s);
+          s.async = true;
+          s.onload = () => {
+            VEGA_DEBUG[key] = version;
+            return resolve(paths[lib]);
+          };
+          s.onerror = () => reject(`Error loading script: ${paths[lib]}`);
+          s.src = paths[lib];
+        });
+    }
+
+    function showError(err) {
+      outputDiv.innerHTML = `<div class="error" style="color:red;">${err}</div>`;
+      throw err;
+    }
+
+    function displayChart(vegaEmbed) {
+      vegaEmbed(outputDiv, spec, embedOpt)
+        .catch(err => showError(`Javascript Error: ${err.message}<br>This usually means there's a typo in your chart specification. See the javascript console for the full traceback.`));
+    }
+
+    if(typeof define === "function" && define.amd) {
+      requirejs.config({paths});
+      require(["vega-embed"], displayChart, err => showError(`Error loading script: ${err.message}`));
+    } else {
+      maybeLoadScript("vega", "5")
+        .then(() => maybeLoadScript("vega-lite", "4.17.0"))
+        .then(() => maybeLoadScript("vega-embed", "6"))
+        .catch(showError)
+        .then(() => displayChart(vegaEmbed));
+    }
+  })({"config": {"view": {"continuousWidth": 400, "continuousHeight": 300}, "axis": {"grid": false}}, "data": {"url": "http://localhost:63908/7c70fc15623d8fc932be17103be8051d.json"}, "mark": "bar", "encoding": {"x": {"bin": {"maxbins": 25}, "field": "children_per_woman", "title": "Income", "type": "quantitative"}, "y": {"aggregate": "count", "title": "Count", "type": "ordinal"}}, "height": 150, "width": 500, "$schema": "https://vega.github.io/schema/vega-lite/v4.17.0.json"}, {"mode": "vega-lite"});
+</script></div></div>
 </div>
 </section>
 <section id="adjust-bins-by-bin-size-bin-steps">
@@ -787,14 +928,61 @@ https://altair-viz.github.io/user_guide/troubleshooting.html
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;VegaLite 4 object&gt;
+<div class="output text_html">
+<div id="altair-viz-7dceb082d5f24718a1b8638596e76d1b"></div>
+<script type="text/javascript">
+  var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
+  (function(spec, embedOpt){
+    let outputDiv = document.currentScript.previousElementSibling;
+    if (outputDiv.id !== "altair-viz-7dceb082d5f24718a1b8638596e76d1b") {
+      outputDiv = document.getElementById("altair-viz-7dceb082d5f24718a1b8638596e76d1b");
+    }
+    const paths = {
+      "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
+      "vega-lib": "https://cdn.jsdelivr.net/npm//vega-lib?noext",
+      "vega-lite": "https://cdn.jsdelivr.net/npm//vega-lite@4.17.0?noext",
+      "vega-embed": "https://cdn.jsdelivr.net/npm//vega-embed@6?noext",
+    };
 
-If you see this message, it means the renderer has not been properly enabled
-for the frontend that you are using. For more information, see
-https://altair-viz.github.io/user_guide/troubleshooting.html
-</pre></div>
-</div>
-</div>
+    function maybeLoadScript(lib, version) {
+      var key = `${lib.replace("-", "")}_version`;
+      return (VEGA_DEBUG[key] == version) ?
+        Promise.resolve(paths[lib]) :
+        new Promise(function(resolve, reject) {
+          var s = document.createElement('script');
+          document.getElementsByTagName("head")[0].appendChild(s);
+          s.async = true;
+          s.onload = () => {
+            VEGA_DEBUG[key] = version;
+            return resolve(paths[lib]);
+          };
+          s.onerror = () => reject(`Error loading script: ${paths[lib]}`);
+          s.src = paths[lib];
+        });
+    }
+
+    function showError(err) {
+      outputDiv.innerHTML = `<div class="error" style="color:red;">${err}</div>`;
+      throw err;
+    }
+
+    function displayChart(vegaEmbed) {
+      vegaEmbed(outputDiv, spec, embedOpt)
+        .catch(err => showError(`Javascript Error: ${err.message}<br>This usually means there's a typo in your chart specification. See the javascript console for the full traceback.`));
+    }
+
+    if(typeof define === "function" && define.amd) {
+      requirejs.config({paths});
+      require(["vega-embed"], displayChart, err => showError(`Error loading script: ${err.message}`));
+    } else {
+      maybeLoadScript("vega", "5")
+        .then(() => maybeLoadScript("vega-lite", "4.17.0"))
+        .then(() => maybeLoadScript("vega-embed", "6"))
+        .catch(showError)
+        .then(() => displayChart(vegaEmbed));
+    }
+  })({"config": {"view": {"continuousWidth": 400, "continuousHeight": 300}, "axis": {"grid": false}}, "data": {"url": "http://localhost:63908/7c70fc15623d8fc932be17103be8051d.json"}, "mark": "bar", "encoding": {"x": {"bin": {"extent": [4, 8], "step": 0.25}, "field": "children_per_woman", "title": "Income", "type": "quantitative"}, "y": {"aggregate": "count", "title": "Count", "type": "ordinal"}}, "height": 150, "width": 500, "$schema": "https://vega.github.io/schema/vega-lite/v4.17.0.json"}, {"mode": "vega-lite"});
+</script></div></div>
 </div>
 </section>
 </section>
@@ -831,14 +1019,61 @@ https://altair-viz.github.io/user_guide/troubleshooting.html
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;VegaLite 4 object&gt;
+<div class="output text_html">
+<div id="altair-viz-2abf081b5a8d4d5f995d75615aec8b6d"></div>
+<script type="text/javascript">
+  var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
+  (function(spec, embedOpt){
+    let outputDiv = document.currentScript.previousElementSibling;
+    if (outputDiv.id !== "altair-viz-2abf081b5a8d4d5f995d75615aec8b6d") {
+      outputDiv = document.getElementById("altair-viz-2abf081b5a8d4d5f995d75615aec8b6d");
+    }
+    const paths = {
+      "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
+      "vega-lib": "https://cdn.jsdelivr.net/npm//vega-lib?noext",
+      "vega-lite": "https://cdn.jsdelivr.net/npm//vega-lite@4.17.0?noext",
+      "vega-embed": "https://cdn.jsdelivr.net/npm//vega-embed@6?noext",
+    };
 
-If you see this message, it means the renderer has not been properly enabled
-for the frontend that you are using. For more information, see
-https://altair-viz.github.io/user_guide/troubleshooting.html
-</pre></div>
-</div>
-</div>
+    function maybeLoadScript(lib, version) {
+      var key = `${lib.replace("-", "")}_version`;
+      return (VEGA_DEBUG[key] == version) ?
+        Promise.resolve(paths[lib]) :
+        new Promise(function(resolve, reject) {
+          var s = document.createElement('script');
+          document.getElementsByTagName("head")[0].appendChild(s);
+          s.async = true;
+          s.onload = () => {
+            VEGA_DEBUG[key] = version;
+            return resolve(paths[lib]);
+          };
+          s.onerror = () => reject(`Error loading script: ${paths[lib]}`);
+          s.src = paths[lib];
+        });
+    }
+
+    function showError(err) {
+      outputDiv.innerHTML = `<div class="error" style="color:red;">${err}</div>`;
+      throw err;
+    }
+
+    function displayChart(vegaEmbed) {
+      vegaEmbed(outputDiv, spec, embedOpt)
+        .catch(err => showError(`Javascript Error: ${err.message}<br>This usually means there's a typo in your chart specification. See the javascript console for the full traceback.`));
+    }
+
+    if(typeof define === "function" && define.amd) {
+      requirejs.config({paths});
+      require(["vega-embed"], displayChart, err => showError(`Error loading script: ${err.message}`));
+    } else {
+      maybeLoadScript("vega", "5")
+        .then(() => maybeLoadScript("vega-lite", "4.17.0"))
+        .then(() => maybeLoadScript("vega-embed", "6"))
+        .catch(showError)
+        .then(() => displayChart(vegaEmbed));
+    }
+  })({"config": {"view": {"continuousWidth": 400, "continuousHeight": 300}, "axis": {"grid": false, "titleFontSize": 14}, "title": {"fontSize": 16}}, "data": {"url": "http://localhost:63908/c2265aa8b6a0184953dee7709bec3c54.json"}, "mark": {"type": "circle", "opacity": 0.5}, "encoding": {"color": {"field": "region", "legend": {"title": "Region"}, "type": "nominal"}, "size": {"field": "population", "legend": {"title": "Population"}, "scale": {"range": [50, 3000]}, "type": "quantitative"}, "x": {"field": "children_per_woman", "scale": {"zero": false}, "title": "Children per Woman", "type": "quantitative"}, "y": {"field": "life_expectancy", "scale": {"zero": false}, "title": "Life Expectancy", "type": "quantitative"}}, "height": 500, "title": "Fertility vs. Life Expectancy in 1962", "width": 500, "$schema": "https://vega.github.io/schema/vega-lite/v4.17.0.json"}, {"mode": "vega-lite"});
+</script></div></div>
 </div>
 </section>
 <section id="line-plot">
@@ -877,14 +1112,61 @@ https://altair-viz.github.io/user_guide/troubleshooting.html
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;VegaLite 4 object&gt;
+<div class="output text_html">
+<div id="altair-viz-a0c0a79059984689b17fa8197b0d5ed4"></div>
+<script type="text/javascript">
+  var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
+  (function(spec, embedOpt){
+    let outputDiv = document.currentScript.previousElementSibling;
+    if (outputDiv.id !== "altair-viz-a0c0a79059984689b17fa8197b0d5ed4") {
+      outputDiv = document.getElementById("altair-viz-a0c0a79059984689b17fa8197b0d5ed4");
+    }
+    const paths = {
+      "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
+      "vega-lib": "https://cdn.jsdelivr.net/npm//vega-lib?noext",
+      "vega-lite": "https://cdn.jsdelivr.net/npm//vega-lite@4.17.0?noext",
+      "vega-embed": "https://cdn.jsdelivr.net/npm//vega-embed@6?noext",
+    };
 
-If you see this message, it means the renderer has not been properly enabled
-for the frontend that you are using. For more information, see
-https://altair-viz.github.io/user_guide/troubleshooting.html
-</pre></div>
-</div>
-</div>
+    function maybeLoadScript(lib, version) {
+      var key = `${lib.replace("-", "")}_version`;
+      return (VEGA_DEBUG[key] == version) ?
+        Promise.resolve(paths[lib]) :
+        new Promise(function(resolve, reject) {
+          var s = document.createElement('script');
+          document.getElementsByTagName("head")[0].appendChild(s);
+          s.async = true;
+          s.onload = () => {
+            VEGA_DEBUG[key] = version;
+            return resolve(paths[lib]);
+          };
+          s.onerror = () => reject(`Error loading script: ${paths[lib]}`);
+          s.src = paths[lib];
+        });
+    }
+
+    function showError(err) {
+      outputDiv.innerHTML = `<div class="error" style="color:red;">${err}</div>`;
+      throw err;
+    }
+
+    function displayChart(vegaEmbed) {
+      vegaEmbed(outputDiv, spec, embedOpt)
+        .catch(err => showError(`Javascript Error: ${err.message}<br>This usually means there's a typo in your chart specification. See the javascript console for the full traceback.`));
+    }
+
+    if(typeof define === "function" && define.amd) {
+      requirejs.config({paths});
+      require(["vega-embed"], displayChart, err => showError(`Error loading script: ${err.message}`));
+    } else {
+      maybeLoadScript("vega", "5")
+        .then(() => maybeLoadScript("vega-lite", "4.17.0"))
+        .then(() => maybeLoadScript("vega-embed", "6"))
+        .catch(showError)
+        .then(() => displayChart(vegaEmbed));
+    }
+  })({"config": {"view": {"continuousWidth": 400, "continuousHeight": 300}}, "data": {"url": "http://localhost:63908/47897c30714ff3fd9deb3b13f3265e65.json"}, "mark": "line", "encoding": {"color": {"field": "region", "type": "nominal"}, "x": {"field": "year", "type": "temporal"}, "y": {"aggregate": "mean", "field": "income", "type": "quantitative"}}, "$schema": "https://vega.github.io/schema/vega-lite/v4.17.0.json"}, {"mode": "vega-lite"});
+</script></div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -896,14 +1178,61 @@ https://altair-viz.github.io/user_guide/troubleshooting.html
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;VegaLite 4 object&gt;
+<div class="output text_html">
+<div id="altair-viz-d4c4d09cba854b10b96363e78f2bfd4e"></div>
+<script type="text/javascript">
+  var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
+  (function(spec, embedOpt){
+    let outputDiv = document.currentScript.previousElementSibling;
+    if (outputDiv.id !== "altair-viz-d4c4d09cba854b10b96363e78f2bfd4e") {
+      outputDiv = document.getElementById("altair-viz-d4c4d09cba854b10b96363e78f2bfd4e");
+    }
+    const paths = {
+      "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
+      "vega-lib": "https://cdn.jsdelivr.net/npm//vega-lib?noext",
+      "vega-lite": "https://cdn.jsdelivr.net/npm//vega-lite@4.17.0?noext",
+      "vega-embed": "https://cdn.jsdelivr.net/npm//vega-embed@6?noext",
+    };
 
-If you see this message, it means the renderer has not been properly enabled
-for the frontend that you are using. For more information, see
-https://altair-viz.github.io/user_guide/troubleshooting.html
-</pre></div>
-</div>
-</div>
+    function maybeLoadScript(lib, version) {
+      var key = `${lib.replace("-", "")}_version`;
+      return (VEGA_DEBUG[key] == version) ?
+        Promise.resolve(paths[lib]) :
+        new Promise(function(resolve, reject) {
+          var s = document.createElement('script');
+          document.getElementsByTagName("head")[0].appendChild(s);
+          s.async = true;
+          s.onload = () => {
+            VEGA_DEBUG[key] = version;
+            return resolve(paths[lib]);
+          };
+          s.onerror = () => reject(`Error loading script: ${paths[lib]}`);
+          s.src = paths[lib];
+        });
+    }
+
+    function showError(err) {
+      outputDiv.innerHTML = `<div class="error" style="color:red;">${err}</div>`;
+      throw err;
+    }
+
+    function displayChart(vegaEmbed) {
+      vegaEmbed(outputDiv, spec, embedOpt)
+        .catch(err => showError(`Javascript Error: ${err.message}<br>This usually means there's a typo in your chart specification. See the javascript console for the full traceback.`));
+    }
+
+    if(typeof define === "function" && define.amd) {
+      requirejs.config({paths});
+      require(["vega-embed"], displayChart, err => showError(`Error loading script: ${err.message}`));
+    } else {
+      maybeLoadScript("vega", "5")
+        .then(() => maybeLoadScript("vega-lite", "4.17.0"))
+        .then(() => maybeLoadScript("vega-embed", "6"))
+        .catch(showError)
+        .then(() => displayChart(vegaEmbed));
+    }
+  })({"config": {"view": {"continuousWidth": 400, "continuousHeight": 300}}, "layer": [{"mark": "line", "encoding": {"color": {"field": "region", "type": "nominal"}, "x": {"field": "year", "type": "temporal"}, "y": {"aggregate": "mean", "field": "income", "type": "quantitative"}}}, {"mark": {"type": "rule", "size": 1.5, "strokeDash": [5, 5]}, "encoding": {"color": {"field": "region", "type": "nominal"}, "x": {"datum": {"year": 2005}}, "y": {"aggregate": "mean", "field": "income", "type": "quantitative"}}}], "data": {"url": "http://localhost:63908/47897c30714ff3fd9deb3b13f3265e65.json"}, "$schema": "https://vega.github.io/schema/vega-lite/v4.17.0.json"}, {"mode": "vega-lite"});
+</script></div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -916,14 +1245,61 @@ https://altair-viz.github.io/user_guide/troubleshooting.html
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;VegaLite 4 object&gt;
+<div class="output text_html">
+<div id="altair-viz-5a7d5875da1e40de911b728add096289"></div>
+<script type="text/javascript">
+  var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
+  (function(spec, embedOpt){
+    let outputDiv = document.currentScript.previousElementSibling;
+    if (outputDiv.id !== "altair-viz-5a7d5875da1e40de911b728add096289") {
+      outputDiv = document.getElementById("altair-viz-5a7d5875da1e40de911b728add096289");
+    }
+    const paths = {
+      "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
+      "vega-lib": "https://cdn.jsdelivr.net/npm//vega-lib?noext",
+      "vega-lite": "https://cdn.jsdelivr.net/npm//vega-lite@4.17.0?noext",
+      "vega-embed": "https://cdn.jsdelivr.net/npm//vega-embed@6?noext",
+    };
 
-If you see this message, it means the renderer has not been properly enabled
-for the frontend that you are using. For more information, see
-https://altair-viz.github.io/user_guide/troubleshooting.html
-</pre></div>
-</div>
-</div>
+    function maybeLoadScript(lib, version) {
+      var key = `${lib.replace("-", "")}_version`;
+      return (VEGA_DEBUG[key] == version) ?
+        Promise.resolve(paths[lib]) :
+        new Promise(function(resolve, reject) {
+          var s = document.createElement('script');
+          document.getElementsByTagName("head")[0].appendChild(s);
+          s.async = true;
+          s.onload = () => {
+            VEGA_DEBUG[key] = version;
+            return resolve(paths[lib]);
+          };
+          s.onerror = () => reject(`Error loading script: ${paths[lib]}`);
+          s.src = paths[lib];
+        });
+    }
+
+    function showError(err) {
+      outputDiv.innerHTML = `<div class="error" style="color:red;">${err}</div>`;
+      throw err;
+    }
+
+    function displayChart(vegaEmbed) {
+      vegaEmbed(outputDiv, spec, embedOpt)
+        .catch(err => showError(`Javascript Error: ${err.message}<br>This usually means there's a typo in your chart specification. See the javascript console for the full traceback.`));
+    }
+
+    if(typeof define === "function" && define.amd) {
+      requirejs.config({paths});
+      require(["vega-embed"], displayChart, err => showError(`Error loading script: ${err.message}`));
+    } else {
+      maybeLoadScript("vega", "5")
+        .then(() => maybeLoadScript("vega-lite", "4.17.0"))
+        .then(() => maybeLoadScript("vega-embed", "6"))
+        .catch(showError)
+        .then(() => displayChart(vegaEmbed));
+    }
+  })({"config": {"view": {"continuousWidth": 400, "continuousHeight": 300}}, "layer": [{"mark": "line", "encoding": {"color": {"field": "region", "type": "nominal"}, "x": {"field": "year", "type": "temporal"}, "y": {"aggregate": "mean", "field": "income", "type": "quantitative"}}}, {"mark": {"type": "rule", "strokeDash": [5, 5]}, "encoding": {"color": {"field": "region", "type": "nominal"}, "x": {"datum": 2010}, "y": {"aggregate": "mean", "field": "income", "type": "quantitative"}}}, {"mark": {"type": "text", "color": "black", "dx": 125, "dy": -115, "size": 15}, "encoding": {"color": {"field": "region", "type": "nominal"}, "text": {"value": "2005, Gun law enacted"}, "x": {"field": "year", "type": "temporal"}, "y": {"aggregate": "mean", "field": "income", "type": "quantitative"}}}], "data": {"url": "http://localhost:63908/47897c30714ff3fd9deb3b13f3265e65.json"}, "$schema": "https://vega.github.io/schema/vega-lite/v4.17.0.json"}, {"mode": "vega-lite"});
+</script></div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -937,14 +1313,61 @@ https://altair-viz.github.io/user_guide/troubleshooting.html
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;VegaLite 4 object&gt;
+<div class="output text_html">
+<div id="altair-viz-90f5eeba1ee34691a17b39350751caa9"></div>
+<script type="text/javascript">
+  var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
+  (function(spec, embedOpt){
+    let outputDiv = document.currentScript.previousElementSibling;
+    if (outputDiv.id !== "altair-viz-90f5eeba1ee34691a17b39350751caa9") {
+      outputDiv = document.getElementById("altair-viz-90f5eeba1ee34691a17b39350751caa9");
+    }
+    const paths = {
+      "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
+      "vega-lib": "https://cdn.jsdelivr.net/npm//vega-lib?noext",
+      "vega-lite": "https://cdn.jsdelivr.net/npm//vega-lite@4.17.0?noext",
+      "vega-embed": "https://cdn.jsdelivr.net/npm//vega-embed@6?noext",
+    };
 
-If you see this message, it means the renderer has not been properly enabled
-for the frontend that you are using. For more information, see
-https://altair-viz.github.io/user_guide/troubleshooting.html
-</pre></div>
-</div>
-</div>
+    function maybeLoadScript(lib, version) {
+      var key = `${lib.replace("-", "")}_version`;
+      return (VEGA_DEBUG[key] == version) ?
+        Promise.resolve(paths[lib]) :
+        new Promise(function(resolve, reject) {
+          var s = document.createElement('script');
+          document.getElementsByTagName("head")[0].appendChild(s);
+          s.async = true;
+          s.onload = () => {
+            VEGA_DEBUG[key] = version;
+            return resolve(paths[lib]);
+          };
+          s.onerror = () => reject(`Error loading script: ${paths[lib]}`);
+          s.src = paths[lib];
+        });
+    }
+
+    function showError(err) {
+      outputDiv.innerHTML = `<div class="error" style="color:red;">${err}</div>`;
+      throw err;
+    }
+
+    function displayChart(vegaEmbed) {
+      vegaEmbed(outputDiv, spec, embedOpt)
+        .catch(err => showError(`Javascript Error: ${err.message}<br>This usually means there's a typo in your chart specification. See the javascript console for the full traceback.`));
+    }
+
+    if(typeof define === "function" && define.amd) {
+      requirejs.config({paths});
+      require(["vega-embed"], displayChart, err => showError(`Error loading script: ${err.message}`));
+    } else {
+      maybeLoadScript("vega", "5")
+        .then(() => maybeLoadScript("vega-lite", "4.17.0"))
+        .then(() => maybeLoadScript("vega-embed", "6"))
+        .catch(showError)
+        .then(() => displayChart(vegaEmbed));
+    }
+  })({"config": {"view": {"continuousWidth": 400, "continuousHeight": 300}, "axis": {"grid": false}}, "layer": [{"mark": "line", "encoding": {"color": {"field": "region", "type": "nominal"}, "x": {"field": "year", "type": "temporal"}, "y": {"aggregate": "mean", "field": "income", "type": "quantitative"}}}, {"mark": {"type": "square", "size": 20}, "encoding": {"color": {"field": "region", "type": "nominal"}, "x": {"field": "year", "type": "temporal"}, "y": {"aggregate": "mean", "field": "income", "type": "quantitative"}}}, {"mark": {"type": "errorband", "opacity": 0.2}, "encoding": {"color": {"field": "region", "type": "nominal"}, "x": {"field": "year", "type": "temporal"}, "y": {"aggregate": "mean", "field": "income", "type": "quantitative"}}}], "data": {"url": "http://localhost:63908/47897c30714ff3fd9deb3b13f3265e65.json"}, "$schema": "https://vega.github.io/schema/vega-lite/v4.17.0.json"}, {"mode": "vega-lite"});
+</script></div></div>
 </div>
 <section id="area-chart">
 <h3>Area chart<a class="headerlink" href="#area-chart" title="Permalink to this headline">#</a></h3>
@@ -965,14 +1388,61 @@ https://altair-viz.github.io/user_guide/troubleshooting.html
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;VegaLite 4 object&gt;
+<div class="output text_html">
+<div id="altair-viz-95be36842b8b4dcb97ca506b976212f5"></div>
+<script type="text/javascript">
+  var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
+  (function(spec, embedOpt){
+    let outputDiv = document.currentScript.previousElementSibling;
+    if (outputDiv.id !== "altair-viz-95be36842b8b4dcb97ca506b976212f5") {
+      outputDiv = document.getElementById("altair-viz-95be36842b8b4dcb97ca506b976212f5");
+    }
+    const paths = {
+      "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
+      "vega-lib": "https://cdn.jsdelivr.net/npm//vega-lib?noext",
+      "vega-lite": "https://cdn.jsdelivr.net/npm//vega-lite@4.17.0?noext",
+      "vega-embed": "https://cdn.jsdelivr.net/npm//vega-embed@6?noext",
+    };
 
-If you see this message, it means the renderer has not been properly enabled
-for the frontend that you are using. For more information, see
-https://altair-viz.github.io/user_guide/troubleshooting.html
-</pre></div>
-</div>
-</div>
+    function maybeLoadScript(lib, version) {
+      var key = `${lib.replace("-", "")}_version`;
+      return (VEGA_DEBUG[key] == version) ?
+        Promise.resolve(paths[lib]) :
+        new Promise(function(resolve, reject) {
+          var s = document.createElement('script');
+          document.getElementsByTagName("head")[0].appendChild(s);
+          s.async = true;
+          s.onload = () => {
+            VEGA_DEBUG[key] = version;
+            return resolve(paths[lib]);
+          };
+          s.onerror = () => reject(`Error loading script: ${paths[lib]}`);
+          s.src = paths[lib];
+        });
+    }
+
+    function showError(err) {
+      outputDiv.innerHTML = `<div class="error" style="color:red;">${err}</div>`;
+      throw err;
+    }
+
+    function displayChart(vegaEmbed) {
+      vegaEmbed(outputDiv, spec, embedOpt)
+        .catch(err => showError(`Javascript Error: ${err.message}<br>This usually means there's a typo in your chart specification. See the javascript console for the full traceback.`));
+    }
+
+    if(typeof define === "function" && define.amd) {
+      requirejs.config({paths});
+      require(["vega-embed"], displayChart, err => showError(`Error loading script: ${err.message}`));
+    } else {
+      maybeLoadScript("vega", "5")
+        .then(() => maybeLoadScript("vega-lite", "4.17.0"))
+        .then(() => maybeLoadScript("vega-embed", "6"))
+        .catch(showError)
+        .then(() => displayChart(vegaEmbed));
+    }
+  })({"config": {"view": {"continuousWidth": 400, "continuousHeight": 300}, "axis": {"grid": false}}, "data": {"url": "http://localhost:63908/7c70fc15623d8fc932be17103be8051d.json"}, "mark": "area", "encoding": {"color": {"field": "region", "type": "nominal"}, "x": {"field": "year", "type": "temporal"}, "y": {"aggregate": "sum", "field": "income", "type": "quantitative"}}, "$schema": "https://vega.github.io/schema/vega-lite/v4.17.0.json"}, {"mode": "vega-lite"});
+</script></div></div>
 </div>
 </section>
 </section>
@@ -991,14 +1461,61 @@ https://altair-viz.github.io/user_guide/troubleshooting.html
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;VegaLite 4 object&gt;
+<div class="output text_html">
+<div id="altair-viz-d9b235e606e347288334acc9502d9cb9"></div>
+<script type="text/javascript">
+  var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
+  (function(spec, embedOpt){
+    let outputDiv = document.currentScript.previousElementSibling;
+    if (outputDiv.id !== "altair-viz-d9b235e606e347288334acc9502d9cb9") {
+      outputDiv = document.getElementById("altair-viz-d9b235e606e347288334acc9502d9cb9");
+    }
+    const paths = {
+      "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
+      "vega-lib": "https://cdn.jsdelivr.net/npm//vega-lib?noext",
+      "vega-lite": "https://cdn.jsdelivr.net/npm//vega-lite@4.17.0?noext",
+      "vega-embed": "https://cdn.jsdelivr.net/npm//vega-embed@6?noext",
+    };
 
-If you see this message, it means the renderer has not been properly enabled
-for the frontend that you are using. For more information, see
-https://altair-viz.github.io/user_guide/troubleshooting.html
-</pre></div>
-</div>
-</div>
+    function maybeLoadScript(lib, version) {
+      var key = `${lib.replace("-", "")}_version`;
+      return (VEGA_DEBUG[key] == version) ?
+        Promise.resolve(paths[lib]) :
+        new Promise(function(resolve, reject) {
+          var s = document.createElement('script');
+          document.getElementsByTagName("head")[0].appendChild(s);
+          s.async = true;
+          s.onload = () => {
+            VEGA_DEBUG[key] = version;
+            return resolve(paths[lib]);
+          };
+          s.onerror = () => reject(`Error loading script: ${paths[lib]}`);
+          s.src = paths[lib];
+        });
+    }
+
+    function showError(err) {
+      outputDiv.innerHTML = `<div class="error" style="color:red;">${err}</div>`;
+      throw err;
+    }
+
+    function displayChart(vegaEmbed) {
+      vegaEmbed(outputDiv, spec, embedOpt)
+        .catch(err => showError(`Javascript Error: ${err.message}<br>This usually means there's a typo in your chart specification. See the javascript console for the full traceback.`));
+    }
+
+    if(typeof define === "function" && define.amd) {
+      requirejs.config({paths});
+      require(["vega-embed"], displayChart, err => showError(`Error loading script: ${err.message}`));
+    } else {
+      maybeLoadScript("vega", "5")
+        .then(() => maybeLoadScript("vega-lite", "4.17.0"))
+        .then(() => maybeLoadScript("vega-embed", "6"))
+        .catch(showError)
+        .then(() => displayChart(vegaEmbed));
+    }
+  })({"config": {"view": {"continuousWidth": 400, "continuousHeight": 300}}, "data": {"url": "http://localhost:63908/7c70fc15623d8fc932be17103be8051d.json"}, "mark": "boxplot", "encoding": {"x": {"field": "life_expectancy", "type": "quantitative"}, "y": {"field": "region", "type": "nominal"}}, "$schema": "https://vega.github.io/schema/vega-lite/v4.17.0.json"}, {"mode": "vega-lite"});
+</script></div></div>
 </div>
 </section>
 <section id="density-plot">
@@ -1020,14 +1537,61 @@ https://altair-viz.github.io/user_guide/troubleshooting.html
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;VegaLite 4 object&gt;
+<div class="output text_html">
+<div id="altair-viz-adb183f494a44e8d953669b6a9d6df89"></div>
+<script type="text/javascript">
+  var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
+  (function(spec, embedOpt){
+    let outputDiv = document.currentScript.previousElementSibling;
+    if (outputDiv.id !== "altair-viz-adb183f494a44e8d953669b6a9d6df89") {
+      outputDiv = document.getElementById("altair-viz-adb183f494a44e8d953669b6a9d6df89");
+    }
+    const paths = {
+      "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
+      "vega-lib": "https://cdn.jsdelivr.net/npm//vega-lib?noext",
+      "vega-lite": "https://cdn.jsdelivr.net/npm//vega-lite@4.17.0?noext",
+      "vega-embed": "https://cdn.jsdelivr.net/npm//vega-embed@6?noext",
+    };
 
-If you see this message, it means the renderer has not been properly enabled
-for the frontend that you are using. For more information, see
-https://altair-viz.github.io/user_guide/troubleshooting.html
-</pre></div>
-</div>
-</div>
+    function maybeLoadScript(lib, version) {
+      var key = `${lib.replace("-", "")}_version`;
+      return (VEGA_DEBUG[key] == version) ?
+        Promise.resolve(paths[lib]) :
+        new Promise(function(resolve, reject) {
+          var s = document.createElement('script');
+          document.getElementsByTagName("head")[0].appendChild(s);
+          s.async = true;
+          s.onload = () => {
+            VEGA_DEBUG[key] = version;
+            return resolve(paths[lib]);
+          };
+          s.onerror = () => reject(`Error loading script: ${paths[lib]}`);
+          s.src = paths[lib];
+        });
+    }
+
+    function showError(err) {
+      outputDiv.innerHTML = `<div class="error" style="color:red;">${err}</div>`;
+      throw err;
+    }
+
+    function displayChart(vegaEmbed) {
+      vegaEmbed(outputDiv, spec, embedOpt)
+        .catch(err => showError(`Javascript Error: ${err.message}<br>This usually means there's a typo in your chart specification. See the javascript console for the full traceback.`));
+    }
+
+    if(typeof define === "function" && define.amd) {
+      requirejs.config({paths});
+      require(["vega-embed"], displayChart, err => showError(`Error loading script: ${err.message}`));
+    } else {
+      maybeLoadScript("vega", "5")
+        .then(() => maybeLoadScript("vega-lite", "4.17.0"))
+        .then(() => maybeLoadScript("vega-embed", "6"))
+        .catch(showError)
+        .then(() => displayChart(vegaEmbed));
+    }
+  })({"config": {"view": {"continuousWidth": 400, "continuousHeight": 300}, "axis": {"grid": false}}, "data": {"url": "http://localhost:63908/7c70fc15623d8fc932be17103be8051d.json"}, "facet": {"field": "region", "type": "nominal"}, "spec": {"mark": "area", "encoding": {"color": {"field": "region", "type": "nominal"}, "x": {"field": "life_expectancy", "type": "quantitative"}, "y": {"field": "density", "type": "quantitative"}}, "height": 100, "transform": [{"density": "life_expectancy", "groupby": ["region"], "as": ["life_expectancy", "density"]}]}, "columns": 2, "$schema": "https://vega.github.io/schema/vega-lite/v4.17.0.json"}, {"mode": "vega-lite"});
+</script></div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1046,14 +1610,61 @@ https://altair-viz.github.io/user_guide/troubleshooting.html
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;VegaLite 4 object&gt;
+<div class="output text_html">
+<div id="altair-viz-8e8f469f816443878974020bef13ced3"></div>
+<script type="text/javascript">
+  var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
+  (function(spec, embedOpt){
+    let outputDiv = document.currentScript.previousElementSibling;
+    if (outputDiv.id !== "altair-viz-8e8f469f816443878974020bef13ced3") {
+      outputDiv = document.getElementById("altair-viz-8e8f469f816443878974020bef13ced3");
+    }
+    const paths = {
+      "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
+      "vega-lib": "https://cdn.jsdelivr.net/npm//vega-lib?noext",
+      "vega-lite": "https://cdn.jsdelivr.net/npm//vega-lite@4.17.0?noext",
+      "vega-embed": "https://cdn.jsdelivr.net/npm//vega-embed@6?noext",
+    };
 
-If you see this message, it means the renderer has not been properly enabled
-for the frontend that you are using. For more information, see
-https://altair-viz.github.io/user_guide/troubleshooting.html
-</pre></div>
-</div>
-</div>
+    function maybeLoadScript(lib, version) {
+      var key = `${lib.replace("-", "")}_version`;
+      return (VEGA_DEBUG[key] == version) ?
+        Promise.resolve(paths[lib]) :
+        new Promise(function(resolve, reject) {
+          var s = document.createElement('script');
+          document.getElementsByTagName("head")[0].appendChild(s);
+          s.async = true;
+          s.onload = () => {
+            VEGA_DEBUG[key] = version;
+            return resolve(paths[lib]);
+          };
+          s.onerror = () => reject(`Error loading script: ${paths[lib]}`);
+          s.src = paths[lib];
+        });
+    }
+
+    function showError(err) {
+      outputDiv.innerHTML = `<div class="error" style="color:red;">${err}</div>`;
+      throw err;
+    }
+
+    function displayChart(vegaEmbed) {
+      vegaEmbed(outputDiv, spec, embedOpt)
+        .catch(err => showError(`Javascript Error: ${err.message}<br>This usually means there's a typo in your chart specification. See the javascript console for the full traceback.`));
+    }
+
+    if(typeof define === "function" && define.amd) {
+      requirejs.config({paths});
+      require(["vega-embed"], displayChart, err => showError(`Error loading script: ${err.message}`));
+    } else {
+      maybeLoadScript("vega", "5")
+        .then(() => maybeLoadScript("vega-lite", "4.17.0"))
+        .then(() => maybeLoadScript("vega-embed", "6"))
+        .catch(showError)
+        .then(() => displayChart(vegaEmbed));
+    }
+  })({"config": {"view": {"continuousWidth": 400, "continuousHeight": 300}, "axis": {"grid": false}}, "data": {"url": "http://localhost:63908/7c70fc15623d8fc932be17103be8051d.json"}, "facet": {"field": "region", "type": "nominal"}, "spec": {"mark": {"type": "area", "opacity": 0.3}, "encoding": {"color": {"field": "sub_region", "legend": null, "type": "nominal"}, "x": {"field": "life_expectancy", "type": "quantitative"}, "y": {"field": "density", "type": "quantitative"}}, "height": 100, "transform": [{"density": "life_expectancy", "groupby": ["region", "sub_region"], "as": ["life_expectancy", "density"]}]}, "columns": 2, "$schema": "https://vega.github.io/schema/vega-lite/v4.17.0.json"}, {"mode": "vega-lite"});
+</script></div></div>
 </div>
 </section>
 </section>
@@ -1085,14 +1696,61 @@ https://altair-viz.github.io/user_guide/troubleshooting.html
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;VegaLite 4 object&gt;
+<div class="output text_html">
+<div id="altair-viz-df93780b3e9c4c3eb8f5d79891b74260"></div>
+<script type="text/javascript">
+  var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
+  (function(spec, embedOpt){
+    let outputDiv = document.currentScript.previousElementSibling;
+    if (outputDiv.id !== "altair-viz-df93780b3e9c4c3eb8f5d79891b74260") {
+      outputDiv = document.getElementById("altair-viz-df93780b3e9c4c3eb8f5d79891b74260");
+    }
+    const paths = {
+      "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
+      "vega-lib": "https://cdn.jsdelivr.net/npm//vega-lib?noext",
+      "vega-lite": "https://cdn.jsdelivr.net/npm//vega-lite@4.17.0?noext",
+      "vega-embed": "https://cdn.jsdelivr.net/npm//vega-embed@6?noext",
+    };
 
-If you see this message, it means the renderer has not been properly enabled
-for the frontend that you are using. For more information, see
-https://altair-viz.github.io/user_guide/troubleshooting.html
-</pre></div>
-</div>
-</div>
+    function maybeLoadScript(lib, version) {
+      var key = `${lib.replace("-", "")}_version`;
+      return (VEGA_DEBUG[key] == version) ?
+        Promise.resolve(paths[lib]) :
+        new Promise(function(resolve, reject) {
+          var s = document.createElement('script');
+          document.getElementsByTagName("head")[0].appendChild(s);
+          s.async = true;
+          s.onload = () => {
+            VEGA_DEBUG[key] = version;
+            return resolve(paths[lib]);
+          };
+          s.onerror = () => reject(`Error loading script: ${paths[lib]}`);
+          s.src = paths[lib];
+        });
+    }
+
+    function showError(err) {
+      outputDiv.innerHTML = `<div class="error" style="color:red;">${err}</div>`;
+      throw err;
+    }
+
+    function displayChart(vegaEmbed) {
+      vegaEmbed(outputDiv, spec, embedOpt)
+        .catch(err => showError(`Javascript Error: ${err.message}<br>This usually means there's a typo in your chart specification. See the javascript console for the full traceback.`));
+    }
+
+    if(typeof define === "function" && define.amd) {
+      requirejs.config({paths});
+      require(["vega-embed"], displayChart, err => showError(`Error loading script: ${err.message}`));
+    } else {
+      maybeLoadScript("vega", "5")
+        .then(() => maybeLoadScript("vega-lite", "4.17.0"))
+        .then(() => maybeLoadScript("vega-embed", "6"))
+        .catch(showError)
+        .then(() => displayChart(vegaEmbed));
+    }
+  })({"config": {"view": {"continuousWidth": 400, "continuousHeight": 300}, "axis": {"grid": false}}, "data": {"url": "http://localhost:63908/24844f68a97b6bafa16aa832df90a70f.json"}, "facet": {"field": "year", "timeUnit": "year", "title": "Year", "type": "temporal"}, "spec": {"mark": "circle", "encoding": {"color": {"field": "income_group", "legend": {"title": "Income Group"}, "scale": {"scheme": "tableau10"}, "sort": ["High", "Upper middle", "Lower middle", "Low"], "type": "ordinal"}, "x": {"field": "children_per_woman", "title": "Child per Woman", "type": "quantitative"}, "y": {"field": "child_mortality", "title": "Child Mortality", "type": "quantitative"}}, "height": 150, "width": 180}, "columns": 3, "$schema": "https://vega.github.io/schema/vega-lite/v4.17.0.json"}, {"mode": "vega-lite"});
+</script></div></div>
 </div>
 </section>
 </section>
@@ -1122,14 +1780,61 @@ https://altair-viz.github.io/user_guide/troubleshooting.html
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;VegaLite 4 object&gt;
+<div class="output text_html">
+<div id="altair-viz-567c8c5f239e4cbca02097e0d621adb3"></div>
+<script type="text/javascript">
+  var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
+  (function(spec, embedOpt){
+    let outputDiv = document.currentScript.previousElementSibling;
+    if (outputDiv.id !== "altair-viz-567c8c5f239e4cbca02097e0d621adb3") {
+      outputDiv = document.getElementById("altair-viz-567c8c5f239e4cbca02097e0d621adb3");
+    }
+    const paths = {
+      "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
+      "vega-lib": "https://cdn.jsdelivr.net/npm//vega-lib?noext",
+      "vega-lite": "https://cdn.jsdelivr.net/npm//vega-lite@4.17.0?noext",
+      "vega-embed": "https://cdn.jsdelivr.net/npm//vega-embed@6?noext",
+    };
 
-If you see this message, it means the renderer has not been properly enabled
-for the frontend that you are using. For more information, see
-https://altair-viz.github.io/user_guide/troubleshooting.html
-</pre></div>
-</div>
-</div>
+    function maybeLoadScript(lib, version) {
+      var key = `${lib.replace("-", "")}_version`;
+      return (VEGA_DEBUG[key] == version) ?
+        Promise.resolve(paths[lib]) :
+        new Promise(function(resolve, reject) {
+          var s = document.createElement('script');
+          document.getElementsByTagName("head")[0].appendChild(s);
+          s.async = true;
+          s.onload = () => {
+            VEGA_DEBUG[key] = version;
+            return resolve(paths[lib]);
+          };
+          s.onerror = () => reject(`Error loading script: ${paths[lib]}`);
+          s.src = paths[lib];
+        });
+    }
+
+    function showError(err) {
+      outputDiv.innerHTML = `<div class="error" style="color:red;">${err}</div>`;
+      throw err;
+    }
+
+    function displayChart(vegaEmbed) {
+      vegaEmbed(outputDiv, spec, embedOpt)
+        .catch(err => showError(`Javascript Error: ${err.message}<br>This usually means there's a typo in your chart specification. See the javascript console for the full traceback.`));
+    }
+
+    if(typeof define === "function" && define.amd) {
+      requirejs.config({paths});
+      require(["vega-embed"], displayChart, err => showError(`Error loading script: ${err.message}`));
+    } else {
+      maybeLoadScript("vega", "5")
+        .then(() => maybeLoadScript("vega-lite", "4.17.0"))
+        .then(() => maybeLoadScript("vega-embed", "6"))
+        .catch(showError)
+        .then(() => displayChart(vegaEmbed));
+    }
+  })({"config": {"view": {"continuousWidth": 400, "continuousHeight": 300}, "axis": {"grid": false}}, "repeat": {"column": ["life_expectancy", "child_mortality", "children_per_woman", "years_in_school_women"], "row": ["life_expectancy", "child_mortality", "children_per_woman", "years_in_school_women"]}, "spec": {"data": {"url": "http://localhost:63908/2b34bcf6988f1fcd31a72bd61bee022d.json"}, "mark": {"type": "point", "opacity": 0.3, "size": 10}, "encoding": {"color": {"field": "region", "type": "nominal"}, "x": {"field": {"repeat": "row"}, "scale": {"zero": false}, "type": "quantitative"}, "y": {"field": {"repeat": "column"}, "scale": {"zero": false}, "type": "quantitative"}}, "height": 150, "width": 150}, "$schema": "https://vega.github.io/schema/vega-lite/v4.17.0.json"}, {"mode": "vega-lite"});
+</script></div></div>
 </div>
 <section id="categorical-variables">
 <h3>Categorical variables<a class="headerlink" href="#categorical-variables" title="Permalink to this headline">#</a></h3>
@@ -1150,14 +1855,61 @@ https://altair-viz.github.io/user_guide/troubleshooting.html
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;VegaLite 4 object&gt;
+<div class="output text_html">
+<div id="altair-viz-5a33407872c048c38277405f4403670d"></div>
+<script type="text/javascript">
+  var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
+  (function(spec, embedOpt){
+    let outputDiv = document.currentScript.previousElementSibling;
+    if (outputDiv.id !== "altair-viz-5a33407872c048c38277405f4403670d") {
+      outputDiv = document.getElementById("altair-viz-5a33407872c048c38277405f4403670d");
+    }
+    const paths = {
+      "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
+      "vega-lib": "https://cdn.jsdelivr.net/npm//vega-lib?noext",
+      "vega-lite": "https://cdn.jsdelivr.net/npm//vega-lite@4.17.0?noext",
+      "vega-embed": "https://cdn.jsdelivr.net/npm//vega-embed@6?noext",
+    };
 
-If you see this message, it means the renderer has not been properly enabled
-for the frontend that you are using. For more information, see
-https://altair-viz.github.io/user_guide/troubleshooting.html
-</pre></div>
-</div>
-</div>
+    function maybeLoadScript(lib, version) {
+      var key = `${lib.replace("-", "")}_version`;
+      return (VEGA_DEBUG[key] == version) ?
+        Promise.resolve(paths[lib]) :
+        new Promise(function(resolve, reject) {
+          var s = document.createElement('script');
+          document.getElementsByTagName("head")[0].appendChild(s);
+          s.async = true;
+          s.onload = () => {
+            VEGA_DEBUG[key] = version;
+            return resolve(paths[lib]);
+          };
+          s.onerror = () => reject(`Error loading script: ${paths[lib]}`);
+          s.src = paths[lib];
+        });
+    }
+
+    function showError(err) {
+      outputDiv.innerHTML = `<div class="error" style="color:red;">${err}</div>`;
+      throw err;
+    }
+
+    function displayChart(vegaEmbed) {
+      vegaEmbed(outputDiv, spec, embedOpt)
+        .catch(err => showError(`Javascript Error: ${err.message}<br>This usually means there's a typo in your chart specification. See the javascript console for the full traceback.`));
+    }
+
+    if(typeof define === "function" && define.amd) {
+      requirejs.config({paths});
+      require(["vega-embed"], displayChart, err => showError(`Error loading script: ${err.message}`));
+    } else {
+      maybeLoadScript("vega", "5")
+        .then(() => maybeLoadScript("vega-lite", "4.17.0"))
+        .then(() => maybeLoadScript("vega-embed", "6"))
+        .catch(showError)
+        .then(() => displayChart(vegaEmbed));
+    }
+  })({"config": {"view": {"continuousWidth": 400, "continuousHeight": 300}}, "data": {"url": "http://localhost:63908/7c70fc15623d8fc932be17103be8051d.json"}, "mark": "square", "encoding": {"color": {"aggregate": "count", "type": "quantitative"}, "size": {"aggregate": "count", "scale": {"range": [0, 2000]}, "type": "quantitative"}, "x": {"field": "income_group", "title": "Income Group", "type": "nominal"}, "y": {"field": "region", "title": "Region", "type": "nominal"}}, "height": 300, "width": 300, "$schema": "https://vega.github.io/schema/vega-lite/v4.17.0.json"}, {"mode": "vega-lite"});
+</script></div></div>
 </div>
 </section>
 </section>
@@ -1175,14 +1927,61 @@ https://altair-viz.github.io/user_guide/troubleshooting.html
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;VegaLite 4 object&gt;
+<div class="output text_html">
+<div id="altair-viz-a37a6a9622c448d79c2bbc6314f43aa4"></div>
+<script type="text/javascript">
+  var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
+  (function(spec, embedOpt){
+    let outputDiv = document.currentScript.previousElementSibling;
+    if (outputDiv.id !== "altair-viz-a37a6a9622c448d79c2bbc6314f43aa4") {
+      outputDiv = document.getElementById("altair-viz-a37a6a9622c448d79c2bbc6314f43aa4");
+    }
+    const paths = {
+      "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
+      "vega-lib": "https://cdn.jsdelivr.net/npm//vega-lib?noext",
+      "vega-lite": "https://cdn.jsdelivr.net/npm//vega-lite@4.17.0?noext",
+      "vega-embed": "https://cdn.jsdelivr.net/npm//vega-embed@6?noext",
+    };
 
-If you see this message, it means the renderer has not been properly enabled
-for the frontend that you are using. For more information, see
-https://altair-viz.github.io/user_guide/troubleshooting.html
-</pre></div>
-</div>
-</div>
+    function maybeLoadScript(lib, version) {
+      var key = `${lib.replace("-", "")}_version`;
+      return (VEGA_DEBUG[key] == version) ?
+        Promise.resolve(paths[lib]) :
+        new Promise(function(resolve, reject) {
+          var s = document.createElement('script');
+          document.getElementsByTagName("head")[0].appendChild(s);
+          s.async = true;
+          s.onload = () => {
+            VEGA_DEBUG[key] = version;
+            return resolve(paths[lib]);
+          };
+          s.onerror = () => reject(`Error loading script: ${paths[lib]}`);
+          s.src = paths[lib];
+        });
+    }
+
+    function showError(err) {
+      outputDiv.innerHTML = `<div class="error" style="color:red;">${err}</div>`;
+      throw err;
+    }
+
+    function displayChart(vegaEmbed) {
+      vegaEmbed(outputDiv, spec, embedOpt)
+        .catch(err => showError(`Javascript Error: ${err.message}<br>This usually means there's a typo in your chart specification. See the javascript console for the full traceback.`));
+    }
+
+    if(typeof define === "function" && define.amd) {
+      requirejs.config({paths});
+      require(["vega-embed"], displayChart, err => showError(`Error loading script: ${err.message}`));
+    } else {
+      maybeLoadScript("vega", "5")
+        .then(() => maybeLoadScript("vega-lite", "4.17.0"))
+        .then(() => maybeLoadScript("vega-embed", "6"))
+        .catch(showError)
+        .then(() => displayChart(vegaEmbed));
+    }
+  })({"config": {"view": {"continuousWidth": 400, "continuousHeight": 300}}, "data": {"url": "http://localhost:63908/7c70fc15623d8fc932be17103be8051d.json"}, "mark": "rect", "encoding": {"color": {"aggregate": "count", "type": "quantitative"}, "x": {"bin": {"maxbins": 20}, "field": "years_in_school_women", "type": "quantitative"}, "y": {"bin": {"maxbins": 20}, "field": "children_per_woman", "type": "quantitative"}}, "$schema": "https://vega.github.io/schema/vega-lite/v4.17.0.json"}, {"mode": "vega-lite"});
+</script></div></div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1330,104 +2129,574 @@ https://altair-viz.github.io/user_guide/troubleshooting.html
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>DARK
 </pre></div>
 </div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;VegaLite 4 object&gt;
+<div class="output text_html">
+<div id="altair-viz-5c8344d7a9754813915acbe9721b6aa7"></div>
+<script type="text/javascript">
+  var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
+  (function(spec, embedOpt){
+    let outputDiv = document.currentScript.previousElementSibling;
+    if (outputDiv.id !== "altair-viz-5c8344d7a9754813915acbe9721b6aa7") {
+      outputDiv = document.getElementById("altair-viz-5c8344d7a9754813915acbe9721b6aa7");
+    }
+    const paths = {
+      "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
+      "vega-lib": "https://cdn.jsdelivr.net/npm//vega-lib?noext",
+      "vega-lite": "https://cdn.jsdelivr.net/npm//vega-lite@4.17.0?noext",
+      "vega-embed": "https://cdn.jsdelivr.net/npm//vega-embed@6?noext",
+    };
 
-If you see this message, it means the renderer has not been properly enabled
-for the frontend that you are using. For more information, see
-https://altair-viz.github.io/user_guide/troubleshooting.html
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>DEFAULT
-</pre></div>
-</div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;VegaLite 4 object&gt;
+    function maybeLoadScript(lib, version) {
+      var key = `${lib.replace("-", "")}_version`;
+      return (VEGA_DEBUG[key] == version) ?
+        Promise.resolve(paths[lib]) :
+        new Promise(function(resolve, reject) {
+          var s = document.createElement('script');
+          document.getElementsByTagName("head")[0].appendChild(s);
+          s.async = true;
+          s.onload = () => {
+            VEGA_DEBUG[key] = version;
+            return resolve(paths[lib]);
+          };
+          s.onerror = () => reject(`Error loading script: ${paths[lib]}`);
+          s.src = paths[lib];
+        });
+    }
 
-If you see this message, it means the renderer has not been properly enabled
-for the frontend that you are using. For more information, see
-https://altair-viz.github.io/user_guide/troubleshooting.html
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>FIVETHIRTYEIGHT
-</pre></div>
-</div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;VegaLite 4 object&gt;
+    function showError(err) {
+      outputDiv.innerHTML = `<div class="error" style="color:red;">${err}</div>`;
+      throw err;
+    }
 
-If you see this message, it means the renderer has not been properly enabled
-for the frontend that you are using. For more information, see
-https://altair-viz.github.io/user_guide/troubleshooting.html
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>GGPLOT2
-</pre></div>
-</div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;VegaLite 4 object&gt;
+    function displayChart(vegaEmbed) {
+      vegaEmbed(outputDiv, spec, embedOpt)
+        .catch(err => showError(`Javascript Error: ${err.message}<br>This usually means there's a typo in your chart specification. See the javascript console for the full traceback.`));
+    }
 
-If you see this message, it means the renderer has not been properly enabled
-for the frontend that you are using. For more information, see
-https://altair-viz.github.io/user_guide/troubleshooting.html
+    if(typeof define === "function" && define.amd) {
+      requirejs.config({paths});
+      require(["vega-embed"], displayChart, err => showError(`Error loading script: ${err.message}`));
+    } else {
+      maybeLoadScript("vega", "5")
+        .then(() => maybeLoadScript("vega-lite", "4.17.0"))
+        .then(() => maybeLoadScript("vega-embed", "6"))
+        .catch(showError)
+        .then(() => displayChart(vegaEmbed));
+    }
+  })({"usermeta": {"embedOptions": {"theme": "dark"}}, "config": {"view": {"continuousWidth": 400, "continuousHeight": 300}}, "layer": [{"mark": "line", "encoding": {"color": {"field": "region", "type": "nominal"}, "x": {"field": "year", "type": "temporal"}, "y": {"aggregate": "mean", "field": "income", "type": "quantitative"}}}, {"mark": {"type": "square", "size": 20}, "encoding": {"color": {"field": "region", "type": "nominal"}, "x": {"field": "year", "type": "temporal"}, "y": {"aggregate": "mean", "field": "income", "type": "quantitative"}}}, {"mark": {"type": "errorband", "opacity": 0.2}, "encoding": {"color": {"field": "region", "type": "nominal"}, "x": {"field": "year", "type": "temporal"}, "y": {"aggregate": "mean", "field": "income", "type": "quantitative"}}}], "data": {"url": "http://localhost:63908/47897c30714ff3fd9deb3b13f3265e65.json"}, "$schema": "https://vega.github.io/schema/vega-lite/v4.17.0.json"}, {"mode": "vega-lite"});
+</script></div><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>DEFAULT
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>LATIMES
-</pre></div>
-</div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;VegaLite 4 object&gt;
+<div class="output text_html">
+<div id="altair-viz-e87e2c501fff41d39a433b4af060d1cd"></div>
+<script type="text/javascript">
+  var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
+  (function(spec, embedOpt){
+    let outputDiv = document.currentScript.previousElementSibling;
+    if (outputDiv.id !== "altair-viz-e87e2c501fff41d39a433b4af060d1cd") {
+      outputDiv = document.getElementById("altair-viz-e87e2c501fff41d39a433b4af060d1cd");
+    }
+    const paths = {
+      "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
+      "vega-lib": "https://cdn.jsdelivr.net/npm//vega-lib?noext",
+      "vega-lite": "https://cdn.jsdelivr.net/npm//vega-lite@4.17.0?noext",
+      "vega-embed": "https://cdn.jsdelivr.net/npm//vega-embed@6?noext",
+    };
 
-If you see this message, it means the renderer has not been properly enabled
-for the frontend that you are using. For more information, see
-https://altair-viz.github.io/user_guide/troubleshooting.html
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>NONE
-</pre></div>
-</div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;VegaLite 4 object&gt;
+    function maybeLoadScript(lib, version) {
+      var key = `${lib.replace("-", "")}_version`;
+      return (VEGA_DEBUG[key] == version) ?
+        Promise.resolve(paths[lib]) :
+        new Promise(function(resolve, reject) {
+          var s = document.createElement('script');
+          document.getElementsByTagName("head")[0].appendChild(s);
+          s.async = true;
+          s.onload = () => {
+            VEGA_DEBUG[key] = version;
+            return resolve(paths[lib]);
+          };
+          s.onerror = () => reject(`Error loading script: ${paths[lib]}`);
+          s.src = paths[lib];
+        });
+    }
 
-If you see this message, it means the renderer has not been properly enabled
-for the frontend that you are using. For more information, see
-https://altair-viz.github.io/user_guide/troubleshooting.html
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>OPAQUE
-</pre></div>
-</div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;VegaLite 4 object&gt;
+    function showError(err) {
+      outputDiv.innerHTML = `<div class="error" style="color:red;">${err}</div>`;
+      throw err;
+    }
 
-If you see this message, it means the renderer has not been properly enabled
-for the frontend that you are using. For more information, see
-https://altair-viz.github.io/user_guide/troubleshooting.html
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>QUARTZ
-</pre></div>
-</div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;VegaLite 4 object&gt;
+    function displayChart(vegaEmbed) {
+      vegaEmbed(outputDiv, spec, embedOpt)
+        .catch(err => showError(`Javascript Error: ${err.message}<br>This usually means there's a typo in your chart specification. See the javascript console for the full traceback.`));
+    }
 
-If you see this message, it means the renderer has not been properly enabled
-for the frontend that you are using. For more information, see
-https://altair-viz.github.io/user_guide/troubleshooting.html
+    if(typeof define === "function" && define.amd) {
+      requirejs.config({paths});
+      require(["vega-embed"], displayChart, err => showError(`Error loading script: ${err.message}`));
+    } else {
+      maybeLoadScript("vega", "5")
+        .then(() => maybeLoadScript("vega-lite", "4.17.0"))
+        .then(() => maybeLoadScript("vega-embed", "6"))
+        .catch(showError)
+        .then(() => displayChart(vegaEmbed));
+    }
+  })({"config": {"view": {"continuousWidth": 400, "continuousHeight": 300}}, "layer": [{"mark": "line", "encoding": {"color": {"field": "region", "type": "nominal"}, "x": {"field": "year", "type": "temporal"}, "y": {"aggregate": "mean", "field": "income", "type": "quantitative"}}}, {"mark": {"type": "square", "size": 20}, "encoding": {"color": {"field": "region", "type": "nominal"}, "x": {"field": "year", "type": "temporal"}, "y": {"aggregate": "mean", "field": "income", "type": "quantitative"}}}, {"mark": {"type": "errorband", "opacity": 0.2}, "encoding": {"color": {"field": "region", "type": "nominal"}, "x": {"field": "year", "type": "temporal"}, "y": {"aggregate": "mean", "field": "income", "type": "quantitative"}}}], "data": {"url": "http://localhost:63908/47897c30714ff3fd9deb3b13f3265e65.json"}, "$schema": "https://vega.github.io/schema/vega-lite/v4.17.0.json"}, {"mode": "vega-lite"});
+</script></div><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>FIVETHIRTYEIGHT
 </pre></div>
 </div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>URBANINSTITUTE
-</pre></div>
-</div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;VegaLite 4 object&gt;
+<div class="output text_html">
+<div id="altair-viz-e5772c41bcde40e1a6e9321e24806fec"></div>
+<script type="text/javascript">
+  var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
+  (function(spec, embedOpt){
+    let outputDiv = document.currentScript.previousElementSibling;
+    if (outputDiv.id !== "altair-viz-e5772c41bcde40e1a6e9321e24806fec") {
+      outputDiv = document.getElementById("altair-viz-e5772c41bcde40e1a6e9321e24806fec");
+    }
+    const paths = {
+      "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
+      "vega-lib": "https://cdn.jsdelivr.net/npm//vega-lib?noext",
+      "vega-lite": "https://cdn.jsdelivr.net/npm//vega-lite@4.17.0?noext",
+      "vega-embed": "https://cdn.jsdelivr.net/npm//vega-embed@6?noext",
+    };
 
-If you see this message, it means the renderer has not been properly enabled
-for the frontend that you are using. For more information, see
-https://altair-viz.github.io/user_guide/troubleshooting.html
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>VOX
-</pre></div>
-</div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;VegaLite 4 object&gt;
+    function maybeLoadScript(lib, version) {
+      var key = `${lib.replace("-", "")}_version`;
+      return (VEGA_DEBUG[key] == version) ?
+        Promise.resolve(paths[lib]) :
+        new Promise(function(resolve, reject) {
+          var s = document.createElement('script');
+          document.getElementsByTagName("head")[0].appendChild(s);
+          s.async = true;
+          s.onload = () => {
+            VEGA_DEBUG[key] = version;
+            return resolve(paths[lib]);
+          };
+          s.onerror = () => reject(`Error loading script: ${paths[lib]}`);
+          s.src = paths[lib];
+        });
+    }
 
-If you see this message, it means the renderer has not been properly enabled
-for the frontend that you are using. For more information, see
-https://altair-viz.github.io/user_guide/troubleshooting.html
+    function showError(err) {
+      outputDiv.innerHTML = `<div class="error" style="color:red;">${err}</div>`;
+      throw err;
+    }
+
+    function displayChart(vegaEmbed) {
+      vegaEmbed(outputDiv, spec, embedOpt)
+        .catch(err => showError(`Javascript Error: ${err.message}<br>This usually means there's a typo in your chart specification. See the javascript console for the full traceback.`));
+    }
+
+    if(typeof define === "function" && define.amd) {
+      requirejs.config({paths});
+      require(["vega-embed"], displayChart, err => showError(`Error loading script: ${err.message}`));
+    } else {
+      maybeLoadScript("vega", "5")
+        .then(() => maybeLoadScript("vega-lite", "4.17.0"))
+        .then(() => maybeLoadScript("vega-embed", "6"))
+        .catch(showError)
+        .then(() => displayChart(vegaEmbed));
+    }
+  })({"usermeta": {"embedOptions": {"theme": "fivethirtyeight"}}, "config": {"view": {"continuousWidth": 400, "continuousHeight": 300}}, "layer": [{"mark": "line", "encoding": {"color": {"field": "region", "type": "nominal"}, "x": {"field": "year", "type": "temporal"}, "y": {"aggregate": "mean", "field": "income", "type": "quantitative"}}}, {"mark": {"type": "square", "size": 20}, "encoding": {"color": {"field": "region", "type": "nominal"}, "x": {"field": "year", "type": "temporal"}, "y": {"aggregate": "mean", "field": "income", "type": "quantitative"}}}, {"mark": {"type": "errorband", "opacity": 0.2}, "encoding": {"color": {"field": "region", "type": "nominal"}, "x": {"field": "year", "type": "temporal"}, "y": {"aggregate": "mean", "field": "income", "type": "quantitative"}}}], "data": {"url": "http://localhost:63908/47897c30714ff3fd9deb3b13f3265e65.json"}, "$schema": "https://vega.github.io/schema/vega-lite/v4.17.0.json"}, {"mode": "vega-lite"});
+</script></div><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>GGPLOT2
 </pre></div>
 </div>
+<div class="output text_html">
+<div id="altair-viz-65b3f708c07d41a483a76624f0a8418e"></div>
+<script type="text/javascript">
+  var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
+  (function(spec, embedOpt){
+    let outputDiv = document.currentScript.previousElementSibling;
+    if (outputDiv.id !== "altair-viz-65b3f708c07d41a483a76624f0a8418e") {
+      outputDiv = document.getElementById("altair-viz-65b3f708c07d41a483a76624f0a8418e");
+    }
+    const paths = {
+      "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
+      "vega-lib": "https://cdn.jsdelivr.net/npm//vega-lib?noext",
+      "vega-lite": "https://cdn.jsdelivr.net/npm//vega-lite@4.17.0?noext",
+      "vega-embed": "https://cdn.jsdelivr.net/npm//vega-embed@6?noext",
+    };
+
+    function maybeLoadScript(lib, version) {
+      var key = `${lib.replace("-", "")}_version`;
+      return (VEGA_DEBUG[key] == version) ?
+        Promise.resolve(paths[lib]) :
+        new Promise(function(resolve, reject) {
+          var s = document.createElement('script');
+          document.getElementsByTagName("head")[0].appendChild(s);
+          s.async = true;
+          s.onload = () => {
+            VEGA_DEBUG[key] = version;
+            return resolve(paths[lib]);
+          };
+          s.onerror = () => reject(`Error loading script: ${paths[lib]}`);
+          s.src = paths[lib];
+        });
+    }
+
+    function showError(err) {
+      outputDiv.innerHTML = `<div class="error" style="color:red;">${err}</div>`;
+      throw err;
+    }
+
+    function displayChart(vegaEmbed) {
+      vegaEmbed(outputDiv, spec, embedOpt)
+        .catch(err => showError(`Javascript Error: ${err.message}<br>This usually means there's a typo in your chart specification. See the javascript console for the full traceback.`));
+    }
+
+    if(typeof define === "function" && define.amd) {
+      requirejs.config({paths});
+      require(["vega-embed"], displayChart, err => showError(`Error loading script: ${err.message}`));
+    } else {
+      maybeLoadScript("vega", "5")
+        .then(() => maybeLoadScript("vega-lite", "4.17.0"))
+        .then(() => maybeLoadScript("vega-embed", "6"))
+        .catch(showError)
+        .then(() => displayChart(vegaEmbed));
+    }
+  })({"usermeta": {"embedOptions": {"theme": "ggplot2"}}, "config": {"view": {"continuousWidth": 400, "continuousHeight": 300}}, "layer": [{"mark": "line", "encoding": {"color": {"field": "region", "type": "nominal"}, "x": {"field": "year", "type": "temporal"}, "y": {"aggregate": "mean", "field": "income", "type": "quantitative"}}}, {"mark": {"type": "square", "size": 20}, "encoding": {"color": {"field": "region", "type": "nominal"}, "x": {"field": "year", "type": "temporal"}, "y": {"aggregate": "mean", "field": "income", "type": "quantitative"}}}, {"mark": {"type": "errorband", "opacity": 0.2}, "encoding": {"color": {"field": "region", "type": "nominal"}, "x": {"field": "year", "type": "temporal"}, "y": {"aggregate": "mean", "field": "income", "type": "quantitative"}}}], "data": {"url": "http://localhost:63908/47897c30714ff3fd9deb3b13f3265e65.json"}, "$schema": "https://vega.github.io/schema/vega-lite/v4.17.0.json"}, {"mode": "vega-lite"});
+</script></div><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>LATIMES
+</pre></div>
 </div>
+<div class="output text_html">
+<div id="altair-viz-144c2c6754a94eec9755198eef9508b3"></div>
+<script type="text/javascript">
+  var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
+  (function(spec, embedOpt){
+    let outputDiv = document.currentScript.previousElementSibling;
+    if (outputDiv.id !== "altair-viz-144c2c6754a94eec9755198eef9508b3") {
+      outputDiv = document.getElementById("altair-viz-144c2c6754a94eec9755198eef9508b3");
+    }
+    const paths = {
+      "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
+      "vega-lib": "https://cdn.jsdelivr.net/npm//vega-lib?noext",
+      "vega-lite": "https://cdn.jsdelivr.net/npm//vega-lite@4.17.0?noext",
+      "vega-embed": "https://cdn.jsdelivr.net/npm//vega-embed@6?noext",
+    };
+
+    function maybeLoadScript(lib, version) {
+      var key = `${lib.replace("-", "")}_version`;
+      return (VEGA_DEBUG[key] == version) ?
+        Promise.resolve(paths[lib]) :
+        new Promise(function(resolve, reject) {
+          var s = document.createElement('script');
+          document.getElementsByTagName("head")[0].appendChild(s);
+          s.async = true;
+          s.onload = () => {
+            VEGA_DEBUG[key] = version;
+            return resolve(paths[lib]);
+          };
+          s.onerror = () => reject(`Error loading script: ${paths[lib]}`);
+          s.src = paths[lib];
+        });
+    }
+
+    function showError(err) {
+      outputDiv.innerHTML = `<div class="error" style="color:red;">${err}</div>`;
+      throw err;
+    }
+
+    function displayChart(vegaEmbed) {
+      vegaEmbed(outputDiv, spec, embedOpt)
+        .catch(err => showError(`Javascript Error: ${err.message}<br>This usually means there's a typo in your chart specification. See the javascript console for the full traceback.`));
+    }
+
+    if(typeof define === "function" && define.amd) {
+      requirejs.config({paths});
+      require(["vega-embed"], displayChart, err => showError(`Error loading script: ${err.message}`));
+    } else {
+      maybeLoadScript("vega", "5")
+        .then(() => maybeLoadScript("vega-lite", "4.17.0"))
+        .then(() => maybeLoadScript("vega-embed", "6"))
+        .catch(showError)
+        .then(() => displayChart(vegaEmbed));
+    }
+  })({"usermeta": {"embedOptions": {"theme": "latimes"}}, "config": {"view": {"continuousWidth": 400, "continuousHeight": 300}}, "layer": [{"mark": "line", "encoding": {"color": {"field": "region", "type": "nominal"}, "x": {"field": "year", "type": "temporal"}, "y": {"aggregate": "mean", "field": "income", "type": "quantitative"}}}, {"mark": {"type": "square", "size": 20}, "encoding": {"color": {"field": "region", "type": "nominal"}, "x": {"field": "year", "type": "temporal"}, "y": {"aggregate": "mean", "field": "income", "type": "quantitative"}}}, {"mark": {"type": "errorband", "opacity": 0.2}, "encoding": {"color": {"field": "region", "type": "nominal"}, "x": {"field": "year", "type": "temporal"}, "y": {"aggregate": "mean", "field": "income", "type": "quantitative"}}}], "data": {"url": "http://localhost:63908/47897c30714ff3fd9deb3b13f3265e65.json"}, "$schema": "https://vega.github.io/schema/vega-lite/v4.17.0.json"}, {"mode": "vega-lite"});
+</script></div><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>NONE
+</pre></div>
+</div>
+<div class="output text_html">
+<div id="altair-viz-2a2588b18d9d4a52af32b3576e6dcdd0"></div>
+<script type="text/javascript">
+  var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
+  (function(spec, embedOpt){
+    let outputDiv = document.currentScript.previousElementSibling;
+    if (outputDiv.id !== "altair-viz-2a2588b18d9d4a52af32b3576e6dcdd0") {
+      outputDiv = document.getElementById("altair-viz-2a2588b18d9d4a52af32b3576e6dcdd0");
+    }
+    const paths = {
+      "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
+      "vega-lib": "https://cdn.jsdelivr.net/npm//vega-lib?noext",
+      "vega-lite": "https://cdn.jsdelivr.net/npm//vega-lite@4.17.0?noext",
+      "vega-embed": "https://cdn.jsdelivr.net/npm//vega-embed@6?noext",
+    };
+
+    function maybeLoadScript(lib, version) {
+      var key = `${lib.replace("-", "")}_version`;
+      return (VEGA_DEBUG[key] == version) ?
+        Promise.resolve(paths[lib]) :
+        new Promise(function(resolve, reject) {
+          var s = document.createElement('script');
+          document.getElementsByTagName("head")[0].appendChild(s);
+          s.async = true;
+          s.onload = () => {
+            VEGA_DEBUG[key] = version;
+            return resolve(paths[lib]);
+          };
+          s.onerror = () => reject(`Error loading script: ${paths[lib]}`);
+          s.src = paths[lib];
+        });
+    }
+
+    function showError(err) {
+      outputDiv.innerHTML = `<div class="error" style="color:red;">${err}</div>`;
+      throw err;
+    }
+
+    function displayChart(vegaEmbed) {
+      vegaEmbed(outputDiv, spec, embedOpt)
+        .catch(err => showError(`Javascript Error: ${err.message}<br>This usually means there's a typo in your chart specification. See the javascript console for the full traceback.`));
+    }
+
+    if(typeof define === "function" && define.amd) {
+      requirejs.config({paths});
+      require(["vega-embed"], displayChart, err => showError(`Error loading script: ${err.message}`));
+    } else {
+      maybeLoadScript("vega", "5")
+        .then(() => maybeLoadScript("vega-lite", "4.17.0"))
+        .then(() => maybeLoadScript("vega-embed", "6"))
+        .catch(showError)
+        .then(() => displayChart(vegaEmbed));
+    }
+  })({"layer": [{"mark": "line", "encoding": {"color": {"field": "region", "type": "nominal"}, "x": {"field": "year", "type": "temporal"}, "y": {"aggregate": "mean", "field": "income", "type": "quantitative"}}}, {"mark": {"type": "square", "size": 20}, "encoding": {"color": {"field": "region", "type": "nominal"}, "x": {"field": "year", "type": "temporal"}, "y": {"aggregate": "mean", "field": "income", "type": "quantitative"}}}, {"mark": {"type": "errorband", "opacity": 0.2}, "encoding": {"color": {"field": "region", "type": "nominal"}, "x": {"field": "year", "type": "temporal"}, "y": {"aggregate": "mean", "field": "income", "type": "quantitative"}}}], "data": {"url": "http://localhost:63908/47897c30714ff3fd9deb3b13f3265e65.json"}, "$schema": "https://vega.github.io/schema/vega-lite/v4.17.0.json"}, {"mode": "vega-lite"});
+</script></div><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>OPAQUE
+</pre></div>
+</div>
+<div class="output text_html">
+<div id="altair-viz-4ef34d7937004e0687f0cf52b55bbd88"></div>
+<script type="text/javascript">
+  var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
+  (function(spec, embedOpt){
+    let outputDiv = document.currentScript.previousElementSibling;
+    if (outputDiv.id !== "altair-viz-4ef34d7937004e0687f0cf52b55bbd88") {
+      outputDiv = document.getElementById("altair-viz-4ef34d7937004e0687f0cf52b55bbd88");
+    }
+    const paths = {
+      "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
+      "vega-lib": "https://cdn.jsdelivr.net/npm//vega-lib?noext",
+      "vega-lite": "https://cdn.jsdelivr.net/npm//vega-lite@4.17.0?noext",
+      "vega-embed": "https://cdn.jsdelivr.net/npm//vega-embed@6?noext",
+    };
+
+    function maybeLoadScript(lib, version) {
+      var key = `${lib.replace("-", "")}_version`;
+      return (VEGA_DEBUG[key] == version) ?
+        Promise.resolve(paths[lib]) :
+        new Promise(function(resolve, reject) {
+          var s = document.createElement('script');
+          document.getElementsByTagName("head")[0].appendChild(s);
+          s.async = true;
+          s.onload = () => {
+            VEGA_DEBUG[key] = version;
+            return resolve(paths[lib]);
+          };
+          s.onerror = () => reject(`Error loading script: ${paths[lib]}`);
+          s.src = paths[lib];
+        });
+    }
+
+    function showError(err) {
+      outputDiv.innerHTML = `<div class="error" style="color:red;">${err}</div>`;
+      throw err;
+    }
+
+    function displayChart(vegaEmbed) {
+      vegaEmbed(outputDiv, spec, embedOpt)
+        .catch(err => showError(`Javascript Error: ${err.message}<br>This usually means there's a typo in your chart specification. See the javascript console for the full traceback.`));
+    }
+
+    if(typeof define === "function" && define.amd) {
+      requirejs.config({paths});
+      require(["vega-embed"], displayChart, err => showError(`Error loading script: ${err.message}`));
+    } else {
+      maybeLoadScript("vega", "5")
+        .then(() => maybeLoadScript("vega-lite", "4.17.0"))
+        .then(() => maybeLoadScript("vega-embed", "6"))
+        .catch(showError)
+        .then(() => displayChart(vegaEmbed));
+    }
+  })({"config": {"background": "white", "view": {"continuousWidth": 400, "continuousHeight": 300}}, "layer": [{"mark": "line", "encoding": {"color": {"field": "region", "type": "nominal"}, "x": {"field": "year", "type": "temporal"}, "y": {"aggregate": "mean", "field": "income", "type": "quantitative"}}}, {"mark": {"type": "square", "size": 20}, "encoding": {"color": {"field": "region", "type": "nominal"}, "x": {"field": "year", "type": "temporal"}, "y": {"aggregate": "mean", "field": "income", "type": "quantitative"}}}, {"mark": {"type": "errorband", "opacity": 0.2}, "encoding": {"color": {"field": "region", "type": "nominal"}, "x": {"field": "year", "type": "temporal"}, "y": {"aggregate": "mean", "field": "income", "type": "quantitative"}}}], "data": {"url": "http://localhost:63908/47897c30714ff3fd9deb3b13f3265e65.json"}, "$schema": "https://vega.github.io/schema/vega-lite/v4.17.0.json"}, {"mode": "vega-lite"});
+</script></div><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>QUARTZ
+</pre></div>
+</div>
+<div class="output text_html">
+<div id="altair-viz-691ddb8c57ea4e9a9477595432d283df"></div>
+<script type="text/javascript">
+  var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
+  (function(spec, embedOpt){
+    let outputDiv = document.currentScript.previousElementSibling;
+    if (outputDiv.id !== "altair-viz-691ddb8c57ea4e9a9477595432d283df") {
+      outputDiv = document.getElementById("altair-viz-691ddb8c57ea4e9a9477595432d283df");
+    }
+    const paths = {
+      "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
+      "vega-lib": "https://cdn.jsdelivr.net/npm//vega-lib?noext",
+      "vega-lite": "https://cdn.jsdelivr.net/npm//vega-lite@4.17.0?noext",
+      "vega-embed": "https://cdn.jsdelivr.net/npm//vega-embed@6?noext",
+    };
+
+    function maybeLoadScript(lib, version) {
+      var key = `${lib.replace("-", "")}_version`;
+      return (VEGA_DEBUG[key] == version) ?
+        Promise.resolve(paths[lib]) :
+        new Promise(function(resolve, reject) {
+          var s = document.createElement('script');
+          document.getElementsByTagName("head")[0].appendChild(s);
+          s.async = true;
+          s.onload = () => {
+            VEGA_DEBUG[key] = version;
+            return resolve(paths[lib]);
+          };
+          s.onerror = () => reject(`Error loading script: ${paths[lib]}`);
+          s.src = paths[lib];
+        });
+    }
+
+    function showError(err) {
+      outputDiv.innerHTML = `<div class="error" style="color:red;">${err}</div>`;
+      throw err;
+    }
+
+    function displayChart(vegaEmbed) {
+      vegaEmbed(outputDiv, spec, embedOpt)
+        .catch(err => showError(`Javascript Error: ${err.message}<br>This usually means there's a typo in your chart specification. See the javascript console for the full traceback.`));
+    }
+
+    if(typeof define === "function" && define.amd) {
+      requirejs.config({paths});
+      require(["vega-embed"], displayChart, err => showError(`Error loading script: ${err.message}`));
+    } else {
+      maybeLoadScript("vega", "5")
+        .then(() => maybeLoadScript("vega-lite", "4.17.0"))
+        .then(() => maybeLoadScript("vega-embed", "6"))
+        .catch(showError)
+        .then(() => displayChart(vegaEmbed));
+    }
+  })({"usermeta": {"embedOptions": {"theme": "quartz"}}, "config": {"view": {"continuousWidth": 400, "continuousHeight": 300}}, "layer": [{"mark": "line", "encoding": {"color": {"field": "region", "type": "nominal"}, "x": {"field": "year", "type": "temporal"}, "y": {"aggregate": "mean", "field": "income", "type": "quantitative"}}}, {"mark": {"type": "square", "size": 20}, "encoding": {"color": {"field": "region", "type": "nominal"}, "x": {"field": "year", "type": "temporal"}, "y": {"aggregate": "mean", "field": "income", "type": "quantitative"}}}, {"mark": {"type": "errorband", "opacity": 0.2}, "encoding": {"color": {"field": "region", "type": "nominal"}, "x": {"field": "year", "type": "temporal"}, "y": {"aggregate": "mean", "field": "income", "type": "quantitative"}}}], "data": {"url": "http://localhost:63908/47897c30714ff3fd9deb3b13f3265e65.json"}, "$schema": "https://vega.github.io/schema/vega-lite/v4.17.0.json"}, {"mode": "vega-lite"});
+</script></div><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>URBANINSTITUTE
+</pre></div>
+</div>
+<div class="output text_html">
+<div id="altair-viz-01e161ee5a7a417488ffeae4f5d6a054"></div>
+<script type="text/javascript">
+  var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
+  (function(spec, embedOpt){
+    let outputDiv = document.currentScript.previousElementSibling;
+    if (outputDiv.id !== "altair-viz-01e161ee5a7a417488ffeae4f5d6a054") {
+      outputDiv = document.getElementById("altair-viz-01e161ee5a7a417488ffeae4f5d6a054");
+    }
+    const paths = {
+      "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
+      "vega-lib": "https://cdn.jsdelivr.net/npm//vega-lib?noext",
+      "vega-lite": "https://cdn.jsdelivr.net/npm//vega-lite@4.17.0?noext",
+      "vega-embed": "https://cdn.jsdelivr.net/npm//vega-embed@6?noext",
+    };
+
+    function maybeLoadScript(lib, version) {
+      var key = `${lib.replace("-", "")}_version`;
+      return (VEGA_DEBUG[key] == version) ?
+        Promise.resolve(paths[lib]) :
+        new Promise(function(resolve, reject) {
+          var s = document.createElement('script');
+          document.getElementsByTagName("head")[0].appendChild(s);
+          s.async = true;
+          s.onload = () => {
+            VEGA_DEBUG[key] = version;
+            return resolve(paths[lib]);
+          };
+          s.onerror = () => reject(`Error loading script: ${paths[lib]}`);
+          s.src = paths[lib];
+        });
+    }
+
+    function showError(err) {
+      outputDiv.innerHTML = `<div class="error" style="color:red;">${err}</div>`;
+      throw err;
+    }
+
+    function displayChart(vegaEmbed) {
+      vegaEmbed(outputDiv, spec, embedOpt)
+        .catch(err => showError(`Javascript Error: ${err.message}<br>This usually means there's a typo in your chart specification. See the javascript console for the full traceback.`));
+    }
+
+    if(typeof define === "function" && define.amd) {
+      requirejs.config({paths});
+      require(["vega-embed"], displayChart, err => showError(`Error loading script: ${err.message}`));
+    } else {
+      maybeLoadScript("vega", "5")
+        .then(() => maybeLoadScript("vega-lite", "4.17.0"))
+        .then(() => maybeLoadScript("vega-embed", "6"))
+        .catch(showError)
+        .then(() => displayChart(vegaEmbed));
+    }
+  })({"usermeta": {"embedOptions": {"theme": "urbaninstitute"}}, "config": {"view": {"continuousWidth": 400, "continuousHeight": 300}}, "layer": [{"mark": "line", "encoding": {"color": {"field": "region", "type": "nominal"}, "x": {"field": "year", "type": "temporal"}, "y": {"aggregate": "mean", "field": "income", "type": "quantitative"}}}, {"mark": {"type": "square", "size": 20}, "encoding": {"color": {"field": "region", "type": "nominal"}, "x": {"field": "year", "type": "temporal"}, "y": {"aggregate": "mean", "field": "income", "type": "quantitative"}}}, {"mark": {"type": "errorband", "opacity": 0.2}, "encoding": {"color": {"field": "region", "type": "nominal"}, "x": {"field": "year", "type": "temporal"}, "y": {"aggregate": "mean", "field": "income", "type": "quantitative"}}}], "data": {"url": "http://localhost:63908/47897c30714ff3fd9deb3b13f3265e65.json"}, "$schema": "https://vega.github.io/schema/vega-lite/v4.17.0.json"}, {"mode": "vega-lite"});
+</script></div><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>VOX
+</pre></div>
+</div>
+<div class="output text_html">
+<div id="altair-viz-dbe92bfcbae043418a7ec1f16632292e"></div>
+<script type="text/javascript">
+  var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
+  (function(spec, embedOpt){
+    let outputDiv = document.currentScript.previousElementSibling;
+    if (outputDiv.id !== "altair-viz-dbe92bfcbae043418a7ec1f16632292e") {
+      outputDiv = document.getElementById("altair-viz-dbe92bfcbae043418a7ec1f16632292e");
+    }
+    const paths = {
+      "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
+      "vega-lib": "https://cdn.jsdelivr.net/npm//vega-lib?noext",
+      "vega-lite": "https://cdn.jsdelivr.net/npm//vega-lite@4.17.0?noext",
+      "vega-embed": "https://cdn.jsdelivr.net/npm//vega-embed@6?noext",
+    };
+
+    function maybeLoadScript(lib, version) {
+      var key = `${lib.replace("-", "")}_version`;
+      return (VEGA_DEBUG[key] == version) ?
+        Promise.resolve(paths[lib]) :
+        new Promise(function(resolve, reject) {
+          var s = document.createElement('script');
+          document.getElementsByTagName("head")[0].appendChild(s);
+          s.async = true;
+          s.onload = () => {
+            VEGA_DEBUG[key] = version;
+            return resolve(paths[lib]);
+          };
+          s.onerror = () => reject(`Error loading script: ${paths[lib]}`);
+          s.src = paths[lib];
+        });
+    }
+
+    function showError(err) {
+      outputDiv.innerHTML = `<div class="error" style="color:red;">${err}</div>`;
+      throw err;
+    }
+
+    function displayChart(vegaEmbed) {
+      vegaEmbed(outputDiv, spec, embedOpt)
+        .catch(err => showError(`Javascript Error: ${err.message}<br>This usually means there's a typo in your chart specification. See the javascript console for the full traceback.`));
+    }
+
+    if(typeof define === "function" && define.amd) {
+      requirejs.config({paths});
+      require(["vega-embed"], displayChart, err => showError(`Error loading script: ${err.message}`));
+    } else {
+      maybeLoadScript("vega", "5")
+        .then(() => maybeLoadScript("vega-lite", "4.17.0"))
+        .then(() => maybeLoadScript("vega-embed", "6"))
+        .catch(showError)
+        .then(() => displayChart(vegaEmbed));
+    }
+  })({"usermeta": {"embedOptions": {"theme": "vox"}}, "config": {"view": {"continuousWidth": 400, "continuousHeight": 300}}, "layer": [{"mark": "line", "encoding": {"color": {"field": "region", "type": "nominal"}, "x": {"field": "year", "type": "temporal"}, "y": {"aggregate": "mean", "field": "income", "type": "quantitative"}}}, {"mark": {"type": "square", "size": 20}, "encoding": {"color": {"field": "region", "type": "nominal"}, "x": {"field": "year", "type": "temporal"}, "y": {"aggregate": "mean", "field": "income", "type": "quantitative"}}}, {"mark": {"type": "errorband", "opacity": 0.2}, "encoding": {"color": {"field": "region", "type": "nominal"}, "x": {"field": "year", "type": "temporal"}, "y": {"aggregate": "mean", "field": "income", "type": "quantitative"}}}], "data": {"url": "http://localhost:63908/47897c30714ff3fd9deb3b13f3265e65.json"}, "$schema": "https://vega.github.io/schema/vega-lite/v4.17.0.json"}, {"mode": "vega-lite"});
+</script></div></div>
 </div>
 </section>
 
